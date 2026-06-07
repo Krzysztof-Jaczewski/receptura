@@ -1,24 +1,12 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
-import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
+import { ProtocolFormValues } from '@/types/types';
 
-interface ProtocolStore {
+type Store = {
     formData: ProtocolFormValues | null;
     setFormData: (data: ProtocolFormValues) => void;
-    clearFormData: () => void;
-}
+};
 
-export const useProtocolStore = create<ProtocolStore>()(
-    persist(
-        (set) => ({
-            formData: null,
-
-            setFormData: (data) => set({ formData: data }),
-
-            clearFormData: () => set({ formData: null }),
-        }),
-        {
-            name: 'protocol-storage',
-        },
-    ),
-);
+export const useProtocolStore = create<Store>((set) => ({
+    formData: null,
+    setFormData: (data) => set({ formData: data }),
+}));

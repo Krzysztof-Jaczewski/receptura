@@ -1,7 +1,28 @@
-export interface DrugFormData {
-    drugName: string;
-    activeIngredient: string;
-    dose: number;
-    concentration: number;
-    volume: number;
-}
+export type Ingredient = {
+    name: string;
+    amount: number;
+    producer: string;
+    batch: string;
+    expiryDate: string;
+};
+
+export type ProtocolFormValues = {
+    patientName: string;
+    doctorName: string;
+    prescriptionNumber: string;
+    dosageForm: 'maść' | 'płyn' | 'krople';
+    totalAmount: number;
+    isSterile: boolean;
+    ingredients: Ingredient[];
+
+    extra?: {
+        calculations: string;
+        packaging: string;
+        tests: string;
+        execution: string;
+        comment: string;
+        dosing: string;
+        duration: string;
+        storage: string;
+    };
+};

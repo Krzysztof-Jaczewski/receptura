@@ -12,19 +12,19 @@ import {
 import { useProtocolStore } from '@/store/protocolStore';
 
 import {
-    FlaskConical,
     User,
-    FileText,
-    Plus,
-    Trash2,
     Stethoscope,
     ClipboardList,
+    FlaskConical,
+    Plus,
+    FileText,
 } from 'lucide-react';
+
 import Switch from '@/components/ui/Switch';
 
 export default function Home() {
     const router = useRouter();
-    const setFormData = useProtocolStore((state) => state.setFormData);
+    const setFormData = useProtocolStore((s) => s.setFormData);
 
     const form = useForm<ProtocolFormValues>({
         resolver: zodResolver(protocolSchema),
@@ -35,15 +35,38 @@ export default function Home() {
             dosageForm: 'maść',
             totalAmount: 0,
             isSterile: false,
-            ingredients: [],
+            ingredients: [
+                {
+                    name: '',
+                    amount: 0,
+                    producer: '',
+                    batch: '',
+                    expiryDate: '',
+                },
+            ],
+            extra: {
+                calculations: '',
+                packaging: '',
+                tests: '',
+                execution: '',
+                comment: '',
+                dosing: '',
+                duration: '',
+                storage: '',
+            },
         },
     });
 
     const { register, handleSubmit, control, setValue } = form;
 
-    const { fields, append, remove } = useFieldArray({
+    const { fields, append } = useFieldArray({
         control,
         name: 'ingredients',
+    });
+
+    const isSterile = useWatch({
+        control,
+        name: 'isSterile',
     });
 
     const onSubmit = (data: ProtocolFormValues) => {
@@ -51,35 +74,40 @@ export default function Home() {
         router.push('/protocol');
     };
 
-    const isSterile = useWatch({
-        control,
-        name: 'isSterile',
-    });
+    const section =
+        'bg-white border rounded-xl p-4 shadow-sm space-y-3 text-[12px]';
 
-    const inputClass =
+    const input =
         'border rounded-lg px-3 py-2 text-sm w-full focus:ring-2 focus:ring-blue-500 focus:outline-none';
 
-    const labelClass = 'text-xs font-medium text-gray-600';
+    const label = 'text-xs font-medium text-gray-600';
 
-    const section = 'bg-white border rounded-xl p-4 space-y-3 shadow-sm';
+    const iconBox =
+        'p-2 rounded-lg bg-white border shadow-sm flex items-center justify-center';
 
     return (
-        <div className='min-h-screen bg-gray-50 py-10 px-4'>
+        <div className='bg-gray-100 min-h-screen py-10'>
             <div className='max-w-5xl mx-auto space-y-6'>
                 {/* HEADER */}
                 <div className='flex items-center gap-2'>
-                    <FileText className='text-blue-600' />
+                    <div className={iconBox}>
+                        <FileText className='text-blue-600 w-5 h-5' />
+                    </div>
+
                     <h1 className='text-2xl font-bold'>
-                        Receptura – Protokół leku
+                        Receptura – Formularz
                     </h1>
                 </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
-                    {/* 🧪 JAŁOWOŚĆ */}
+                    {/* 🧪 STERYLNOŚĆ */}
                     <div className='flex justify-center'>
-                        <div className='bg-white border rounded-xl px-5 py-4 flex items-center justify-between w-full max-w-md shadow-sm'>
+                        <div className='flex items-center justify-between bg-white border rounded-xl px-5 py-3 shadow-sm w-full max-w-md'>
                             <div className='flex items-center gap-2'>
-                                <FlaskConical className='text-purple-600' />
+                                <div className='p-2 rounded-lg bg-purple-50 border border-purple-100 shadow-sm'>
+                                    <FlaskConical className='text-purple-600 w-5 h-5' />
+                                </div>
+
                                 <span className='font-medium text-sm'>
                                     Lek jałowy
                                 </span>
@@ -92,63 +120,64 @@ export default function Home() {
                         </div>
                     </div>
 
-                    {/* 🧑 PACJENT */}
-                    <div className={section}>
-                        <div className='flex items-center gap-2 font-semibold'>
-                            <User className='text-green-600' />
-                            Dane pacjenta
-                        </div>
+                    {/* 👤 + 👨‍⚕️ */}
+                    <div className='grid grid-cols-2 gap-4'>
+                        {/* PACJENT */}
+                        <div className={section}>
+                            <div className='flex items-center gap-2 font-semibold'>
+                                <div className='p-2 rounded-lg bg-green-50 border border-green-100 shadow-sm'>
+                                    <User className='text-green-600 w-5 h-5' />
+                                </div>
+                                Dane pacjenta
+                            </div>
 
-                        <div>
-                            <p className={labelClass}>
-                                Imię i nazwisko pacjenta
-                            </p>
+                            <p className={label}>Imię i nazwisko pacjenta</p>
                             <input
                                 {...register('patientName')}
-                                className={inputClass}
+                                className={input}
                             />
                         </div>
-                    </div>
 
-                    {/* 👨‍⚕️ LEKARZ */}
-                    <div className={section}>
-                        <div className='flex items-center gap-2 font-semibold'>
-                            <Stethoscope className='text-blue-600' />
-                            Dane lekarza
-                        </div>
+                        {/* LEKARZ */}
+                        <div className={section}>
+                            <div className='flex items-center gap-2 font-semibold'>
+                                <div className='p-2 rounded-lg bg-blue-50 border border-blue-100 shadow-sm'>
+                                    <Stethoscope className='text-blue-600 w-5 h-5' />
+                                </div>
+                                Dane lekarza
+                            </div>
 
-                        <div>
-                            <p className={labelClass}>
-                                Imię i nazwisko lekarza
-                            </p>
+                            <p className={label}>Imię i nazwisko lekarza</p>
                             <input
                                 {...register('doctorName')}
-                                className={inputClass}
+                                className={input}
                             />
                         </div>
                     </div>
 
-                    {/* 📄 SZCZEGÓŁY RECEPTY */}
+                    {/* 📄 SZCZEGÓŁY (1 LINIA) */}
                     <div className={section}>
                         <div className='flex items-center gap-2 font-semibold'>
-                            <ClipboardList className='text-orange-500' />
+                            <div className='p-2 rounded-lg bg-orange-50 border border-orange-100 shadow-sm'>
+                                <ClipboardList className='text-orange-500 w-5 h-5' />
+                            </div>
                             Szczegóły recepty
                         </div>
 
                         <div className='grid grid-cols-3 gap-3'>
                             <div>
-                                <p className={labelClass}>Numer recepty</p>
+                                <p className={label}>Numer recepty</p>
                                 <input
                                     {...register('prescriptionNumber')}
-                                    className={inputClass}
+                                    className={input}
                                 />
                             </div>
 
                             <div>
-                                <p className={labelClass}>Postać leku</p>
+                                <p className={label}>Postać leku</p>
                                 <select
                                     {...register('dosageForm')}
-                                    className={inputClass}
+                                    className={input}
                                 >
                                     <option value='maść'>Maść</option>
                                     <option value='płyn'>Płyn</option>
@@ -157,13 +186,13 @@ export default function Home() {
                             </div>
 
                             <div>
-                                <p className={labelClass}>Łączna ilość</p>
+                                <p className={label}>Łączna ilość</p>
                                 <input
                                     type='number'
                                     {...register('totalAmount', {
                                         valueAsNumber: true,
                                     })}
-                                    className={inputClass}
+                                    className={input}
                                 />
                             </div>
                         </div>
@@ -192,72 +221,44 @@ export default function Home() {
                             </button>
                         </div>
 
-                        <div className='grid grid-cols-12 gap-2 text-xs text-gray-500 font-semibold'>
-                            <div className='col-span-4'>Substancja</div>
-                            <div className='col-span-2'>Ilość</div>
-                            <div className='col-span-2'>Producent</div>
-                            <div className='col-span-2'>Seria</div>
-                            <div className='col-span-2'>Data</div>
+                        <div className='grid grid-cols-5 gap-2 text-xs text-gray-500 font-semibold'>
+                            <div>Substancja</div>
+                            <div>Ilość</div>
+                            <div>Producent</div>
+                            <div>Seria</div>
+                            <div>Data</div>
                         </div>
 
-                        <div className='space-y-2'>
-                            {fields.map((field, index) => (
-                                <div
-                                    key={field.id}
-                                    className='grid grid-cols-12 gap-2 items-center bg-gray-50 p-2 rounded-lg'
-                                >
-                                    <input
-                                        {...register(
-                                            `ingredients.${index}.name`,
-                                        )}
-                                        className={inputClass + ' col-span-4'}
-                                    />
+                        {fields.map((f, i) => (
+                            <div key={f.id} className='grid grid-cols-5 gap-2'>
+                                <input
+                                    {...register(`ingredients.${i}.name`)}
+                                    className={input}
+                                />
 
-                                    <input
-                                        type='number'
-                                        {...register(
-                                            `ingredients.${index}.amount`,
-                                            {
-                                                valueAsNumber: true,
-                                            },
-                                        )}
-                                        className={inputClass + ' col-span-2'}
-                                    />
+                                <input
+                                    type='number'
+                                    {...register(`ingredients.${i}.amount`, {
+                                        valueAsNumber: true,
+                                    })}
+                                    className={input}
+                                />
 
-                                    <input
-                                        {...register(
-                                            `ingredients.${index}.producer`,
-                                        )}
-                                        className={inputClass + ' col-span-2'}
-                                    />
-
-                                    <input
-                                        {...register(
-                                            `ingredients.${index}.batch`,
-                                        )}
-                                        className={inputClass + ' col-span-2'}
-                                    />
-
-                                    <div className='col-span-2 flex gap-2'>
-                                        <input
-                                            type='date'
-                                            {...register(
-                                                `ingredients.${index}.expiryDate`,
-                                            )}
-                                            className={inputClass}
-                                        />
-
-                                        <button
-                                            type='button'
-                                            onClick={() => remove(index)}
-                                            className='text-red-500'
-                                        >
-                                            <Trash2 size={16} />
-                                        </button>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                                <input
+                                    {...register(`ingredients.${i}.producer`)}
+                                    className={input}
+                                />
+                                <input
+                                    {...register(`ingredients.${i}.batch`)}
+                                    className={input}
+                                />
+                                <input
+                                    type='date'
+                                    {...register(`ingredients.${i}.expiryDate`)}
+                                    className={input}
+                                />
+                            </div>
+                        ))}
                     </div>
 
                     {/* SUBMIT */}
