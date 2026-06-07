@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@hookform/resolvers':
-        specifier: ^3.3.4
+        specifier: '3'
         version: 3.3.4(react-hook-form@7.52.0(react@19.2.4))
       lucide-react:
         specifier: ^1.17.0
@@ -27,7 +27,7 @@ importers:
         specifier: 7.52.0
         version: 7.52.0(react@19.2.4)
       zod:
-        specifier: 3.23.8
+        specifier: '3'
         version: 3.23.8
       zustand:
         specifier: ^5.0.14
