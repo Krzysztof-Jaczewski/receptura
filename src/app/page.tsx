@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import {
     protocolSchema,
     ProtocolFormValues,
-} from '@/lib/schemas/schemaProtocol';
+} from '@/lib/schemas/protocolSchema';
 
 import { useProtocolStore } from '@/store/protocolStore';
 

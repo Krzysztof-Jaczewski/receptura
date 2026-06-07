@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useProtocolStore } from '@/store/protocolStore';
-import { ProtocolFormValues } from '@/lib/schemas/schemaProtocol';
+import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
