@@ -1,6 +1,7 @@
 export type Ingredient = {
     name: string;
-    amount: number;
+    amount: string;
+    calculatedAmount?: number;
     producer: string;
     batch: string;
     expiryDate: string;

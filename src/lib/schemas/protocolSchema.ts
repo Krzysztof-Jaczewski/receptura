@@ -11,7 +11,8 @@ export const protocolSchema = z.object({
     ingredients: z.array(
         z.object({
             name: z.string(),
-            amount: z.number(),
+            amount: z.string(),
+            calculatedAmount: z.number().optional(),
             producer: z.string(),
             batch: z.string(),
             expiryDate: z.string(),

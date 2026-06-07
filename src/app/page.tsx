@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 
 import Switch from '@/components/ui/Switch';
+import { calculateAdIngredient } from '@/lib/calculations/calculatedAdIngredient';
 
 export default function Home() {
     const router = useRouter();
@@ -38,7 +39,7 @@ export default function Home() {
             ingredients: [
                 {
                     name: '',
-                    amount: 0,
+                    amount: '',
                     producer: '',
                     batch: '',
                     expiryDate: '',
@@ -59,6 +60,8 @@ export default function Home() {
 
     const { register, handleSubmit, control, setValue } = form;
 
+    const values = useWatch({ control });
+    console.log(values);
     const { fields, append } = useFieldArray({
         control,
         name: 'ingredients',
@@ -70,7 +73,11 @@ export default function Home() {
     });
 
     const onSubmit = (data: ProtocolFormValues) => {
-        setFormData(data);
+        const ingredients = calculateAdIngredient(
+            data.ingredients,
+        ) as ProtocolFormValues['ingredients'];
+        console.log('Calculated Ingredients:', ingredients);
+        setFormData({ ...data, ingredients });
         router.push('/protocol');
     };
 
@@ -208,7 +215,7 @@ export default function Home() {
                                 onClick={() =>
                                     append({
                                         name: '',
-                                        amount: 0,
+                                        amount: '',
                                         producer: '',
                                         batch: '',
                                         expiryDate: '',
@@ -237,10 +244,8 @@ export default function Home() {
                                 />
 
                                 <input
-                                    type='number'
-                                    {...register(`ingredients.${i}.amount`, {
-                                        valueAsNumber: true,
-                                    })}
+                                    type='string'
+                                    {...register(`ingredients.${i}.amount`, {})}
                                     className={input}
                                 />
 

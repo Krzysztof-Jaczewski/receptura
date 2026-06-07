@@ -119,7 +119,7 @@ export default function ProtocolPage() {
                                 </div>
 
                                 <div className='border rounded-lg px-3 py-2 text-right bg-gray-50'>
-                                    {i.amount.toFixed(1)} g
+                                    {i.amount} g
                                 </div>
                             </div>
                         ))}
@@ -185,10 +185,15 @@ export default function ProtocolPage() {
                         {draft.ingredients.map((i, idx) => (
                             <div
                                 key={idx}
-                                className='flex justify-between border-b py-1'
+                                className='grid grid-cols-5 gap-2 border-b py-1 text-[11px] items-center'
                             >
                                 <span>{i.name}</span>
-                                <span>{i.amount.toFixed(1)} g</span>
+                                <span>
+                                    {i.calculatedAmount
+                                        ? i.calculatedAmount.toFixed(1)
+                                        : i.amount}
+                                    g
+                                </span>
                                 <span>{i.producer}</span>
                                 <span>{i.batch}</span>
                                 <span>{i.expiryDate}</span>
