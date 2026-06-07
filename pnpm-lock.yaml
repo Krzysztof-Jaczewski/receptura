@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^3.3.4
+        version: 3.3.4(react-hook-form@7.52.0(react@19.2.4))
+      lucide-react:
+        specifier: ^1.17.0
+        version: 1.17.0(react@19.2.4)
       next:
         specifier: 16.2.7
         version: 16.2.7(@babel/core@7.29.7)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -17,6 +23,15 @@ importers:
       react-dom:
         specifier: 19.2.4
         version: 19.2.4(react@19.2.4)
+      react-hook-form:
+        specifier: 7.52.0
+        version: 7.52.0(react@19.2.4)
+      zod:
+        specifier: 3.23.8
+        version: 3.23.8
+      zustand:
+        specifier: ^5.0.14
+        version: 5.0.14(@types/react@19.2.17)(react@19.2.4)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
@@ -162,6 +177,11 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@hookform/resolvers@3.3.4':
+    resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
 
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
@@ -1482,6 +1502,11 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
+  lucide-react@1.17.0:
+    resolution: {integrity: sha512-9FA9evdox/JQL5PT57fdA1x/yg8T7knJ98+zjTL3UfKza6pflQUUh3XtaQIHKvnsJw1lmsEyHVlt5jchYxOQ5w==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
 
@@ -1656,6 +1681,12 @@ packages:
     resolution: {integrity: sha512-AXJdLo8kgMbimY95O2aKQqsz2iWi9jMgKJhRBAxECE4IFxfcazB2LmzloIoibJI3C12IlY20+KFaLv+71bUJeQ==}
     peerDependencies:
       react: ^19.2.4
+
+  react-hook-form@7.52.0:
+    resolution: {integrity: sha512-mJX506Xc6mirzLsmXUJyqlAI3Kj9Ph2RhplYhUVffeOQSnubK2uVqBFOBJmvKikvbFV91pxVXmDiR+QMF19x6A==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18 || ^19
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -1934,8 +1965,29 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
+  zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
   zod@4.4.3:
     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
+
+  zustand@5.0.14:
+    resolution: {integrity: sha512-/8tAspM5LMPr28b3fwLYrtdj77ECpfZviaP75CMTnwO8ISyaE4GDIG/9rDDYq/cH9D2Xw2A2RXglLInmVBQB/g==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      immer: '>=9.0.6'
+      react: '>=18.0.0'
+      use-sync-external-store: '>=1.2.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      immer:
+        optional: true
+      react:
+        optional: true
+      use-sync-external-store:
+        optional: true
 
 snapshots:
 
@@ -2102,6 +2154,10 @@ snapshots:
     dependencies:
       '@eslint/core': 0.17.0
       levn: 0.4.1
+
+  '@hookform/resolvers@3.3.4(react-hook-form@7.52.0(react@19.2.4))':
+    dependencies:
+      react-hook-form: 7.52.0(react@19.2.4)
 
   '@humanfs/core@0.19.2':
     dependencies:
@@ -3480,6 +3536,10 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
+  lucide-react@1.17.0(react@19.2.4):
+    dependencies:
+      react: 19.2.4
+
   magic-string@0.30.21:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -3655,6 +3715,10 @@ snapshots:
     dependencies:
       react: 19.2.4
       scheduler: 0.27.0
+
+  react-hook-form@7.52.0(react@19.2.4):
+    dependencies:
+      react: 19.2.4
 
   react-is@16.13.1: {}
 
@@ -4066,4 +4130,11 @@ snapshots:
     dependencies:
       zod: 4.4.3
 
+  zod@3.23.8: {}
+
   zod@4.4.3: {}
+
+  zustand@5.0.14(@types/react@19.2.17)(react@19.2.4):
+    optionalDependencies:
+      '@types/react': 19.2.17
+      react: 19.2.4

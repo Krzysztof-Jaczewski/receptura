@@ -1,65 +1,275 @@
-import Image from "next/image";
+'use client';
+
+import { useForm, useFieldArray, useWatch } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation';
+
+import {
+    protocolSchema,
+    ProtocolFormValues,
+} from '@/lib/schemas/protocolSchema';
+
+import { useProtocolStore } from '@/store/protocolStore';
+
+import {
+    FlaskConical,
+    User,
+    FileText,
+    Plus,
+    Trash2,
+    Stethoscope,
+    ClipboardList,
+} from 'lucide-react';
+import Switch from '@/components/ui/Switch';
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    const router = useRouter();
+    const setFormData = useProtocolStore((state) => state.setFormData);
+
+    const form = useForm<ProtocolFormValues>({
+        resolver: zodResolver(protocolSchema),
+        defaultValues: {
+            patientName: '',
+            doctorName: '',
+            prescriptionNumber: '',
+            dosageForm: 'maść',
+            totalAmount: 0,
+            isSterile: false,
+            ingredients: [],
+        },
+    });
+
+    const { register, handleSubmit, control, setValue } = form;
+
+    const { fields, append, remove } = useFieldArray({
+        control,
+        name: 'ingredients',
+    });
+
+    const onSubmit = (data: ProtocolFormValues) => {
+        setFormData(data);
+        router.push('/protocol');
+    };
+
+    const isSterile = useWatch({
+        control,
+        name: 'isSterile',
+    });
+
+    const inputClass =
+        'border rounded-lg px-3 py-2 text-sm w-full focus:ring-2 focus:ring-blue-500 focus:outline-none';
+
+    const labelClass = 'text-xs font-medium text-gray-600';
+
+    const section = 'bg-white border rounded-xl p-4 space-y-3 shadow-sm';
+
+    return (
+        <div className='min-h-screen bg-gray-50 py-10 px-4'>
+            <div className='max-w-5xl mx-auto space-y-6'>
+                {/* HEADER */}
+                <div className='flex items-center gap-2'>
+                    <FileText className='text-blue-600' />
+                    <h1 className='text-2xl font-bold'>
+                        Receptura – Protokół leku
+                    </h1>
+                </div>
+
+                <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
+                    {/* 🧪 JAŁOWOŚĆ */}
+                    <div className='flex justify-center'>
+                        <div className='bg-white border rounded-xl px-5 py-4 flex items-center justify-between w-full max-w-md shadow-sm'>
+                            <div className='flex items-center gap-2'>
+                                <FlaskConical className='text-purple-600' />
+                                <span className='font-medium text-sm'>
+                                    Lek jałowy
+                                </span>
+                            </div>
+
+                            <Switch
+                                value={isSterile}
+                                onChange={(val) => setValue('isSterile', val)}
+                            />
+                        </div>
+                    </div>
+
+                    {/* 🧑 PACJENT */}
+                    <div className={section}>
+                        <div className='flex items-center gap-2 font-semibold'>
+                            <User className='text-green-600' />
+                            Dane pacjenta
+                        </div>
+
+                        <div>
+                            <p className={labelClass}>
+                                Imię i nazwisko pacjenta
+                            </p>
+                            <input
+                                {...register('patientName')}
+                                className={inputClass}
+                            />
+                        </div>
+                    </div>
+
+                    {/* 👨‍⚕️ LEKARZ */}
+                    <div className={section}>
+                        <div className='flex items-center gap-2 font-semibold'>
+                            <Stethoscope className='text-blue-600' />
+                            Dane lekarza
+                        </div>
+
+                        <div>
+                            <p className={labelClass}>
+                                Imię i nazwisko lekarza
+                            </p>
+                            <input
+                                {...register('doctorName')}
+                                className={inputClass}
+                            />
+                        </div>
+                    </div>
+
+                    {/* 📄 SZCZEGÓŁY RECEPTY */}
+                    <div className={section}>
+                        <div className='flex items-center gap-2 font-semibold'>
+                            <ClipboardList className='text-orange-500' />
+                            Szczegóły recepty
+                        </div>
+
+                        <div className='grid grid-cols-3 gap-3'>
+                            <div>
+                                <p className={labelClass}>Numer recepty</p>
+                                <input
+                                    {...register('prescriptionNumber')}
+                                    className={inputClass}
+                                />
+                            </div>
+
+                            <div>
+                                <p className={labelClass}>Postać leku</p>
+                                <select
+                                    {...register('dosageForm')}
+                                    className={inputClass}
+                                >
+                                    <option value='maść'>Maść</option>
+                                    <option value='płyn'>Płyn</option>
+                                    <option value='krople'>Krople</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <p className={labelClass}>Łączna ilość</p>
+                                <input
+                                    type='number'
+                                    {...register('totalAmount', {
+                                        valueAsNumber: true,
+                                    })}
+                                    className={inputClass}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 🧾 SKŁADNIKI */}
+                    <div className={section}>
+                        <div className='flex items-center justify-between'>
+                            <div className='font-semibold'>Składniki</div>
+
+                            <button
+                                type='button'
+                                onClick={() =>
+                                    append({
+                                        name: '',
+                                        amount: 0,
+                                        producer: '',
+                                        batch: '',
+                                        expiryDate: '',
+                                    })
+                                }
+                                className='flex items-center gap-1 bg-blue-600 text-white px-3 py-2 rounded-lg text-sm'
+                            >
+                                <Plus size={16} />
+                                Dodaj
+                            </button>
+                        </div>
+
+                        <div className='grid grid-cols-12 gap-2 text-xs text-gray-500 font-semibold'>
+                            <div className='col-span-4'>Substancja</div>
+                            <div className='col-span-2'>Ilość</div>
+                            <div className='col-span-2'>Producent</div>
+                            <div className='col-span-2'>Seria</div>
+                            <div className='col-span-2'>Data</div>
+                        </div>
+
+                        <div className='space-y-2'>
+                            {fields.map((field, index) => (
+                                <div
+                                    key={field.id}
+                                    className='grid grid-cols-12 gap-2 items-center bg-gray-50 p-2 rounded-lg'
+                                >
+                                    <input
+                                        {...register(
+                                            `ingredients.${index}.name`,
+                                        )}
+                                        className={inputClass + ' col-span-4'}
+                                    />
+
+                                    <input
+                                        type='number'
+                                        {...register(
+                                            `ingredients.${index}.amount`,
+                                            {
+                                                valueAsNumber: true,
+                                            },
+                                        )}
+                                        className={inputClass + ' col-span-2'}
+                                    />
+
+                                    <input
+                                        {...register(
+                                            `ingredients.${index}.producer`,
+                                        )}
+                                        className={inputClass + ' col-span-2'}
+                                    />
+
+                                    <input
+                                        {...register(
+                                            `ingredients.${index}.batch`,
+                                        )}
+                                        className={inputClass + ' col-span-2'}
+                                    />
+
+                                    <div className='col-span-2 flex gap-2'>
+                                        <input
+                                            type='date'
+                                            {...register(
+                                                `ingredients.${index}.expiryDate`,
+                                            )}
+                                            className={inputClass}
+                                        />
+
+                                        <button
+                                            type='button'
+                                            onClick={() => remove(index)}
+                                            className='text-red-500'
+                                        >
+                                            <Trash2 size={16} />
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* SUBMIT */}
+                    <button
+                        type='submit'
+                        className='w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold'
+                    >
+                        Generuj protokół
+                    </button>
+                </form>
+            </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    );
 }
+
