@@ -1,5 +1,5 @@
+import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 import { create } from 'zustand';
-import { ProtocolFormValues } from '@/types/types';
 
 type Store = {
     formData: ProtocolFormValues | null;
