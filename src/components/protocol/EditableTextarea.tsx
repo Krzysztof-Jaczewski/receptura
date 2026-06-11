@@ -14,7 +14,7 @@ export const EditableTextarea = ({
             rows={rows}
             value={value}
             onChange={(e) => onChange(e.target.value)}
-            className='w-full border rounded-lg px-3 py-2 text-sm resize-none'
+            className='w-full border rounded-lg px-3 py-1 text-sm resize-y'
         />
     );
 };

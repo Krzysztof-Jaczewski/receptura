@@ -7,7 +7,7 @@ interface ProtocolSectionProps {
 
 export const ProtocolSection = ({ title, children }: ProtocolSectionProps) => {
     return (
-        <section className='border rounded-lg p-3 bg-white shadow-sm space-y-2'>
+        <section className='border rounded-lg p-2 bg-white shadow-sm space-y-2'>
             <h2 className='text-[12px] font-semibold uppercase tracking-wide text-gray-600'>
                 {title}
             </h2>

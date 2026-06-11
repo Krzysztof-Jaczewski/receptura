@@ -10,6 +10,7 @@ import { EditableInput } from '@/components/protocol/EditableInput';
 import { EditableTextarea } from '@/components/protocol/EditableTextarea';
 import { defaultExtra } from '@/data/protocolDefaults';
 import { ProtocolWeighingTable } from '@/components/protocol/ProtocolWeighingTable';
+import { SignatureStampSection } from '@/components/protocol/SignatureStampSection';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
@@ -176,7 +177,7 @@ export default function ProtocolPage() {
                         value={extra.execution}
                         onChange={(value) => updateExtra('execution', value)}
                         rows={5}
-                    />
+                    />{' '}
                 </ProtocolSection>
 
                 {/* 11 */}
@@ -210,6 +211,7 @@ export default function ProtocolPage() {
                         />
                     </div>
                 </ProtocolSection>
+                <SignatureStampSection />
             </div>
         </div>
     );
