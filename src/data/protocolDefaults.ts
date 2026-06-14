@@ -1,5 +1,16 @@
 import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 
+export const defaultExtra = {
+    calculations: '',
+    packaging: '',
+    tests: '',
+    execution: '',
+    comment: '',
+    dosing: '',
+    duration: '',
+    storage: '',
+};
+
 export const protocolDefaultValues: ProtocolFormValues = {
     patientName: '',
     doctorName: '',
@@ -17,24 +28,6 @@ export const protocolDefaultValues: ProtocolFormValues = {
         },
     ],
     extra: {
-        calculations: '',
-        packaging: '',
-        tests: '',
-        execution: '',
-        comment: '',
-        dosing: '',
-        duration: '',
-        storage: '',
+        ...defaultExtra,
     },
-};
-
-export const defaultExtra = {
-    calculations: '',
-    packaging: '',
-    tests: '',
-    execution: '',
-    comment: '',
-    dosing: '',
-    duration: '',
-    storage: '',
 };

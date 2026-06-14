@@ -31,5 +31,17 @@ export const protocolSchema = z.object({
         .optional(),
 });
 
+export const packagingEnum = z.enum([
+    'tube_50',
+    'tube_100',
+    'tube_200',
+    'bottle_40',
+    'bottle_100',
+    'bottle_125',
+    'bottle_200',
+    'bottle_250',
+    'bottle_500',
+]);
+
 export type Ingredient = z.infer<typeof ingredientSchema>;
 export type ProtocolFormValues = z.infer<typeof protocolSchema>;
