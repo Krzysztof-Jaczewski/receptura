@@ -5,6 +5,7 @@ import { ClipboardList } from 'lucide-react';
 import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 import { dosageForms } from '@/data/dosageForms';
 import { durationOptions, storageOptions } from '@/data/protocolDetailsOptions';
+import { containerOptions } from '@/data/containers';
 
 type Props = {
     register: UseFormRegister<ProtocolFormValues>;
@@ -88,6 +89,19 @@ const ProtocolDetailsSection = ({ register }: Props) => {
                         {durationOptions.map((opt) => (
                             <option key={opt.value} value={opt.value}>
                                 {opt.label}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <p className={label}>Opakowanie</p>
+                    <select {...register('extra.packaging')} className={input}>
+                        {containerOptions.map((container) => (
+                            <option
+                                key={container.value}
+                                value={container.value}
+                            >
+                                {container.label}
                             </option>
                         ))}
                     </select>

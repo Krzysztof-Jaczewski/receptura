@@ -16,6 +16,7 @@ import { getPreparation } from '@/lib/preparations/getPreparation';
 import { getTestsByDosageForm } from '@/lib/ingredients/getTestsByDosageForm';
 import { durationOptions, storageOptions } from '@/data/protocolDetailsOptions';
 import { dosageForms } from '@/data/dosageForms';
+import { containerOptions } from '@/data/containers';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
@@ -86,7 +87,7 @@ export default function ProtocolPage() {
                             onChange={(value) =>
                                 updateField('prescriptionNumber', value)
                             }
-                            label='Numer recepty'
+                            label='Nr recepty/Nr kontrolny'
                         />
 
                         <EditableInput
@@ -206,7 +207,11 @@ export default function ProtocolPage() {
                 {/* 5  */}
                 <ProtocolSection title='5. Opakowanie leku'>
                     <EditableTextarea
-                        value={extra.packaging}
+                        value={
+                            containerOptions.find(
+                                (opt) => opt.value === extra.packaging,
+                            )?.label || ''
+                        }
                         onChange={(value) => updateExtra('packaging', value)}
                         rows={1}
                     />
@@ -218,17 +223,8 @@ export default function ProtocolPage() {
                 </ProtocolSection>
 
                 {/* 7 */}
-                <ProtocolSection title='7.Badania po sporządzeniu'>
-                    <div className='space-y-1'>
-                        {tests.map((test, index) => (
-                            <div key={index} className='text-sm'>
-                                • {test}
-                            </div>
-                        ))}
-                    </div>
-                </ProtocolSection>
-                {/* 8 */}
-                <ProtocolSection title='8. Przygotowanie pomieszczenia i personelu'>
+
+                <ProtocolSection title='7. Przygotowanie pomieszczenia i personelu'>
                     <div className='space-y-3'>
                         <div>
                             <div className='font-semibold mb-1'>
@@ -251,14 +247,24 @@ export default function ProtocolPage() {
                         </div>
                     </div>
                 </ProtocolSection>
+                {/* 8 */}
 
-                {/* 9 */}
-                <ProtocolSection title='9. Opis wykonania'>
+                <ProtocolSection title='8. Opis wykonania'>
                     <EditableTextarea
                         value={extra.execution}
                         onChange={(value) => updateExtra('execution', value)}
                         rows={5}
                     />{' '}
+                </ProtocolSection>
+                {/* 9 */}
+                <ProtocolSection title='9.Badania po sporządzeniu'>
+                    <div className='space-y-1'>
+                        {tests.map((test, index) => (
+                            <div key={index} className='text-sm'>
+                                • {test}
+                            </div>
+                        ))}
+                    </div>
                 </ProtocolSection>
 
                 {/*10 */}

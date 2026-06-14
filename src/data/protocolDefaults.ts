@@ -2,7 +2,7 @@ import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 
 export const defaultExtra = {
     calculations: '',
-    packaging: '',
+    packaging: 'tube_100',
     tests: '',
     execution: '',
     comment: '',
