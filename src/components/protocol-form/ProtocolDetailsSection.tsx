@@ -2,8 +2,8 @@
 
 import { UseFormRegister } from 'react-hook-form';
 import { ClipboardList } from 'lucide-react';
-
 import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
+import { dosageForms } from '@/data/dosageForms';
 
 type Props = {
     register: UseFormRegister<ProtocolFormValues>;
@@ -37,9 +37,11 @@ const ProtocolDetailsSection = ({ register }: Props) => {
                 <div>
                     <p className={label}>Postać leku</p>
                     <select {...register('dosageForm')} className={input}>
-                        <option value='maść'>Maść</option>
-                        <option value='płyn'>Płyn</option>
-                        <option value='krople'>Krople</option>
+                        {dosageForms.map((form) => (
+                            <option key={form.value} value={form.value}>
+                                {form.label}
+                            </option>
+                        ))}
                     </select>
                 </div>
 

@@ -8,3 +8,5 @@ export interface IngredientOption {
         percentage: number;
     }[];
 }
+
+export type DosageForm = 'ointment' | 'solution' | 'emulsion' | 'drops';

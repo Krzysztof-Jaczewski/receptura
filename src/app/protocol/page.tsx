@@ -11,6 +11,7 @@ import { EditableTextarea } from '@/components/protocol/EditableTextarea';
 import { defaultExtra } from '@/data/protocolDefaults';
 import { ProtocolWeighingTable } from '@/components/protocol/ProtocolWeighingTable';
 import { SignatureStampSection } from '@/components/protocol/SignatureStampSection';
+import { getIngredientById } from '@/lib/ingredients/getIngredientById';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
@@ -98,20 +99,26 @@ export default function ProtocolPage() {
                 {/* 2 */}
                 <ProtocolSection title='2. Skład recepty'>
                     <div className='space-y-1'>
-                        {draft.ingredients.map((ingredient, index) => (
-                            <div
-                                key={index}
-                                className='flex items-center gap-3 border rounded-lg px-3 py-2 bg-gray-50'
-                            >
-                                <div className='font-medium flex-1'>
-                                    {ingredient.name}
-                                </div>
+                        {draft.ingredients.map((ingredient, index) => {
+                            const ing = getIngredientById(
+                                ingredient.ingredientId,
+                            );
 
-                                <div className='font-semibold text-blue-700 whitespace-nowrap'>
-                                    {Number(ingredient.amount).toFixed(1)} g
+                            return (
+                                <div
+                                    key={index}
+                                    className='flex items-center gap-3 border rounded-lg px-3 py-2 bg-gray-50'
+                                >
+                                    <div className='font-medium flex-1'>
+                                        {ing?.name}
+                                    </div>
+
+                                    <div className='font-semibold text-blue-700 whitespace-nowrap'>
+                                        {Number(ingredient.amount).toFixed(1)} g
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </ProtocolSection>
 

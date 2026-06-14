@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 const ingredientSchema = z.object({
-    name: z.string(),
+    ingredientId: z.string(),
     amount: z.string(),
     calculatedAmount: z.number().optional(),
     producer: z.string(),
@@ -13,7 +13,7 @@ export const protocolSchema = z.object({
     patientName: z.string(),
     doctorName: z.string(),
     prescriptionNumber: z.string(),
-    dosageForm: z.enum(['maść', 'płyn', 'krople']),
+    dosageForm: z.enum(['ointment', 'solution', 'emulsion', 'drops']),
     totalAmount: z.number(),
     isSterile: z.boolean(),
     ingredients: z.array(ingredientSchema),

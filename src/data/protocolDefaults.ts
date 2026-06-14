@@ -15,12 +15,12 @@ export const protocolDefaultValues: ProtocolFormValues = {
     patientName: '',
     doctorName: '',
     prescriptionNumber: '',
-    dosageForm: 'maść',
+    dosageForm: 'ointment',
     totalAmount: 0,
     isSterile: false,
     ingredients: [
         {
-            name: '',
+            ingredientId: '',
             amount: '',
             producer: '',
             batch: '',

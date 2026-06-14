@@ -1,3 +1,4 @@
+import { resolveIngredient } from '@/lib/ingredients/resolveIngredient';
 import { Ingredient } from '@/lib/schemas/protocolSchema';
 interface ProtocolWeighingTableProps {
     ingredients: Ingredient[];
@@ -19,23 +20,35 @@ export const ProtocolWeighingTable = ({
             </thead>
 
             <tbody>
-                {ingredients.map((ingredient, index) => (
-                    <tr key={index} className='border-b last:border-b-0'>
-                        <td className='p-2'>{ingredient.name}</td>
+                {ingredients.flatMap((ingredient, index) => {
+                    const resolved = resolveIngredient(
+                        ingredient.ingredientId,
+                        Number(ingredient.amount),
+                    );
 
-                        <td className='p-2 text-center'>
-                            {Number(ingredient.amount).toFixed(1)} g
-                        </td>
+                    return resolved.map((r, i) => (
+                        <tr
+                            key={`${index}-${i}`}
+                            className='border-b last:border-b-0'
+                        >
+                            <td className='p-2'>{r.name}</td>
 
-                        <td className='p-2'>{ingredient.producer}</td>
+                            <td className='p-2 text-center'>
+                                {r.amount.toFixed(2)} g
+                            </td>
 
-                        <td className='p-2 text-center'>{ingredient.batch}</td>
+                            <td className='p-2'>{ingredient.producer}</td>
 
-                        <td className='p-2 text-center'>
-                            {ingredient.expiryDate}
-                        </td>
-                    </tr>
-                ))}
+                            <td className='p-2 text-center'>
+                                {ingredient.batch}
+                            </td>
+
+                            <td className='p-2 text-center'>
+                                {ingredient.expiryDate}
+                            </td>
+                        </tr>
+                    ));
+                })}
             </tbody>
         </table>
     );

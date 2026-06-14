@@ -4,6 +4,7 @@ import { Control, UseFormRegister, useFieldArray } from 'react-hook-form';
 import { Plus } from 'lucide-react';
 
 import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
+import { ingredientOptions } from '@/data/ingredients';
 
 type Props = {
     control: Control<ProtocolFormValues>;
@@ -31,7 +32,7 @@ const IngredientsSection = ({ control, register }: Props) => {
                     type='button'
                     onClick={() =>
                         append({
-                            name: '',
+                            ingredientId: '',
                             amount: '',
                             producer: '',
                             batch: '',
@@ -57,10 +58,21 @@ const IngredientsSection = ({ control, register }: Props) => {
             {/* ROWS */}
             {fields.map((field, index) => (
                 <div key={field.id} className='grid grid-cols-5 gap-2'>
-                    <input
-                        {...register(`ingredients.${index}.name`)}
+                    <select
+                        {...register(`ingredients.${index}.ingredientId`)}
                         className={input}
-                    />
+                        defaultValue=''
+                    >
+                        <option value='' disabled>
+                            Wybierz składnik
+                        </option>
+
+                        {ingredientOptions.map(({ id, name }) => (
+                            <option key={id} value={id}>
+                                {name}
+                            </option>
+                        ))}
+                    </select>
 
                     <input
                         {...register(`ingredients.${index}.amount`)}
