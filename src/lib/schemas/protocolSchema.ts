@@ -27,6 +27,7 @@ export const protocolSchema = z.object({
             dosing: z.string(),
             duration: z.string(),
             storage: z.string(),
+            executionDate: z.string(),
         })
         .optional(),
 });

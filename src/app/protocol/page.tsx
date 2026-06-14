@@ -73,24 +73,20 @@ export default function ProtocolPage() {
             <div className='bg-white w-[210mm] min-h-[297mm] shadow-xl rounded-lg p-6 text-[12px] text-gray-900 space-y-3'>
                 {/* HEADER */}
                 <div className='border-b pb-2'>
-                    <h1 className='text-lg font-bold uppercase tracking-wider'>
+                    <h1 className='text-lg font-bold uppercase tracking-wider text-center'>
                         Protokół wykonania leku recepturowego
                     </h1>
-
-                    <p className='text-[11px] text-gray-500'>
-                        Dokument wewnętrzny apteki
-                    </p>
                 </div>
 
                 {/* 1 */}
                 <ProtocolSection title='1. Dane podstawowe'>
-                    <div className='grid grid-cols-2 gap-3'>
+                    <div className='grid grid-cols-3 gap-3'>
                         <EditableInput
                             value={draft.prescriptionNumber}
                             onChange={(value) =>
                                 updateField('prescriptionNumber', value)
                             }
-                            placeholder='Numer recepty'
+                            label='Numer recepty'
                         />
 
                         <EditableInput
@@ -98,7 +94,60 @@ export default function ProtocolPage() {
                             onChange={(value) =>
                                 updateField('patientName', value)
                             }
-                            placeholder='Pacjent'
+                            label='Imie i nazwisko pacjenta'
+                        />
+                        <EditableInput
+                            value={draft.doctorName}
+                            onChange={(value) =>
+                                updateField('doctorName', value)
+                            }
+                            label='Imie i nazwisko lekarza'
+                        />
+                    </div>
+                    <div className='grid grid-cols-3 gap-2'>
+                        <EditableInput
+                            value={extra.dosing}
+                            onChange={(value) => updateExtra('dosing', value)}
+                            label='Dawkowanie'
+                        />
+
+                        <EditableInput
+                            value={
+                                storageOptions.find(
+                                    (opt) => opt.value === extra.storage,
+                                )?.label || ''
+                            }
+                            onChange={(value) => updateExtra('storage', value)}
+                            label='Przechowywanie'
+                        />
+                        <EditableInput
+                            label='Postać farmaceutyczna'
+                            value={
+                                dosageForms.find(
+                                    (form) => form.value === draft.dosageForm,
+                                )?.label || ''
+                            }
+                            onChange={(value) =>
+                                updateField('patientName', value)
+                            }
+                        />
+                    </div>
+                    <div className='grid grid-cols-3 gap-2'>
+                        <EditableInput
+                            label='Data wykonania'
+                            value={extra.executionDate}
+                            onChange={(value) =>
+                                updateField('patientName', value)
+                            }
+                        />
+                        <EditableInput
+                            value={
+                                durationOptions.find(
+                                    (opt) => opt.value === extra.duration,
+                                )?.label || ''
+                            }
+                            onChange={(value) => updateExtra('duration', value)}
+                            label='Trwałość'
                         />
                     </div>
                 </ProtocolSection>
@@ -129,34 +178,17 @@ export default function ProtocolPage() {
                     </div>
                 </ProtocolSection>
 
-                {/* 3 */}
-                <ProtocolSection title='3. Postać farmaceutyczna'>
-                    <div className='font-medium capitalize'>
-                        {dosageForms.find(
-                            (form) => form.value === draft.dosageForm,
-                        )?.label || ''}
-                    </div>
-                </ProtocolSection>
-
-                {/* 4 */}
-                <ProtocolSection title='4. Działanie i zastosowanie'>
+                {/*3 */}
+                <ProtocolSection title='3. Działanie i zastosowanie'>
                     <EditableTextarea
                         value={extra.comment}
                         onChange={(value) => updateExtra('comment', value)}
-                        rows={3}
+                        rows={1}
                     />
                 </ProtocolSection>
 
-                {/* 5 */}
-                <ProtocolSection title='5. Dane osoby wystawiającej receptę'>
-                    <EditableInput
-                        value={draft.doctorName}
-                        onChange={(value) => updateField('doctorName', value)}
-                    />
-                </ProtocolSection>
-
-                {/* 6 */}
-                <ProtocolSection title='6. Obliczenia składników'>
+                {/* 4 */}
+                <ProtocolSection title='4. Obliczenia składników'>
                     <EditableTextarea
                         value={extra.calculations}
                         onChange={(value) => updateExtra('calculations', value)}
@@ -164,22 +196,22 @@ export default function ProtocolPage() {
                     />
                 </ProtocolSection>
 
-                {/* 7 */}
-                <ProtocolSection title='7. Opakowanie leku'>
+                {/* 5  */}
+                <ProtocolSection title='5. Opakowanie leku'>
                     <EditableTextarea
                         value={extra.packaging}
                         onChange={(value) => updateExtra('packaging', value)}
-                        rows={2}
+                        rows={1}
                     />
                 </ProtocolSection>
 
-                {/* 8 */}
-                <ProtocolSection title='8. Odważanie składników'>
+                {/* 6 */}
+                <ProtocolSection title='6. Odważanie składników'>
                     <ProtocolWeighingTable ingredients={draft.ingredients} />
                 </ProtocolSection>
 
-                {/* 9 */}
-                <ProtocolSection title='9.Badania po sporządzeniu'>
+                {/* 7 */}
+                <ProtocolSection title='7.Badania po sporządzeniu'>
                     <div className='space-y-1'>
                         {tests.map((test, index) => (
                             <div key={index} className='text-sm'>
@@ -188,8 +220,8 @@ export default function ProtocolPage() {
                         ))}
                     </div>
                 </ProtocolSection>
-                {/* 10 */}
-                <ProtocolSection title='10.Przygotowanie pomieszczenia i personelu'>
+                {/* 8 */}
+                <ProtocolSection title='8. Przygotowanie pomieszczenia i personelu'>
                     <div className='space-y-3'>
                         <div>
                             <div className='font-semibold mb-1'>
@@ -213,8 +245,8 @@ export default function ProtocolPage() {
                     </div>
                 </ProtocolSection>
 
-                {/* 11 */}
-                <ProtocolSection title='11. Opis wykonania'>
+                {/* 9 */}
+                <ProtocolSection title='9. Opis wykonania'>
                     <EditableTextarea
                         value={extra.execution}
                         onChange={(value) => updateExtra('execution', value)}
@@ -222,45 +254,15 @@ export default function ProtocolPage() {
                     />{' '}
                 </ProtocolSection>
 
-                {/* 12 */}
-                <ProtocolSection title='12. Komentarz'>
+                {/*10 */}
+                <ProtocolSection title='10. Komentarz'>
                     <EditableTextarea
                         value={extra.comment}
                         onChange={(value) => updateExtra('comment', value)}
-                        rows={3}
+                        rows={1}
                     />
                 </ProtocolSection>
 
-                {/* 13 */}
-                <ProtocolSection title='13. Dawkowanie / trwałość / przechowywanie'>
-                    <div className='grid grid-cols-3 gap-2'>
-                        <EditableInput
-                            value={extra.dosing}
-                            onChange={(value) => updateExtra('dosing', value)}
-                            placeholder='Dawkowanie'
-                        />
-
-                        <EditableInput
-                            value={
-                                durationOptions.find(
-                                    (opt) => opt.value === extra.duration,
-                                )?.label || ''
-                            }
-                            onChange={(value) => updateExtra('duration', value)}
-                            placeholder='Trwałość'
-                        />
-
-                        <EditableInput
-                            value={
-                                storageOptions.find(
-                                    (opt) => opt.value === extra.storage,
-                                )?.label || ''
-                            }
-                            onChange={(value) => updateExtra('storage', value)}
-                            placeholder='Przechowywanie'
-                        />
-                    </div>
-                </ProtocolSection>
                 <SignatureStampSection />
             </div>
         </div>

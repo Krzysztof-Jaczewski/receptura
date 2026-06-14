@@ -9,6 +9,7 @@ export const defaultExtra = {
     dosing: '',
     duration: '',
     storage: '',
+    executionDate: new Date().toISOString().split('T')[0],
 };
 
 export const protocolDefaultValues: ProtocolFormValues = {
