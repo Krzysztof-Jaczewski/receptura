@@ -12,6 +12,7 @@ import { defaultExtra } from '@/data/protocolDefaults';
 import { ProtocolWeighingTable } from '@/components/protocol/ProtocolWeighingTable';
 import { SignatureStampSection } from '@/components/protocol/SignatureStampSection';
 import { getIngredientById } from '@/lib/ingredients/getIngredientById';
+import { getTestsByDosageForm } from '@/lib/ingredients/getTestsByDosageForm';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
@@ -60,6 +61,8 @@ export default function ProtocolPage() {
             };
         });
     };
+
+    const tests = getTestsByDosageForm(draft.dosageForm);
 
     return (
         <div className='bg-gray-100 min-h-screen py-6 flex justify-center'>
@@ -170,12 +173,14 @@ export default function ProtocolPage() {
                 </ProtocolSection>
 
                 {/* 9 */}
-                <ProtocolSection title='9. Badania'>
-                    <EditableTextarea
-                        value={extra.tests}
-                        onChange={(value) => updateExtra('tests', value)}
-                        rows={3}
-                    />
+                <ProtocolSection title='Badania po sporządzeniu'>
+                    <div className='space-y-1'>
+                        {tests.map((test, index) => (
+                            <div key={index} className='text-sm'>
+                                • {test}
+                            </div>
+                        ))}
+                    </div>
                 </ProtocolSection>
 
                 {/* 10 */}

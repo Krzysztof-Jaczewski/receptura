@@ -1,3 +1,5 @@
+import { dosageForms } from '@/data/dosageForms';
+
 export interface IngredientOption {
     id: string;
     name: string;
@@ -9,4 +11,4 @@ export interface IngredientOption {
     }[];
 }
 
-export type DosageForm = 'ointment' | 'solution' | 'emulsion' | 'drops';
+export type DosageForm = (typeof dosageForms)[number]['value'];
