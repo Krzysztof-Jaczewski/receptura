@@ -12,3 +12,4 @@ export interface IngredientOption {
 }
 
 export type DosageForm = (typeof dosageForms)[number]['value'];
+export type Sterility = 'sterile' | 'nonSterile';

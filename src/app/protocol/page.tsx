@@ -12,7 +12,8 @@ import { defaultExtra } from '@/data/protocolDefaults';
 import { ProtocolWeighingTable } from '@/components/protocol/ProtocolWeighingTable';
 import { SignatureStampSection } from '@/components/protocol/SignatureStampSection';
 import { getIngredientById } from '@/lib/ingredients/getIngredientById';
-import { getTestsByDosageForm } from '@/lib/ingredients/getTestsByDosageForm';
+import { getTestsByDosageForm } from '@/lib/preparations/getTestsByDosageForm';
+import { getPreparation } from '@/lib/preparations/getPreparation';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
@@ -63,6 +64,7 @@ export default function ProtocolPage() {
     };
 
     const tests = getTestsByDosageForm(draft.dosageForm);
+    const preparation = getPreparation(draft.isSterile);
 
     return (
         <div className='bg-gray-100 min-h-screen py-6 flex justify-center'>
@@ -173,7 +175,7 @@ export default function ProtocolPage() {
                 </ProtocolSection>
 
                 {/* 9 */}
-                <ProtocolSection title='Badania po sporządzeniu'>
+                <ProtocolSection title='9.Badania po sporządzeniu'>
                     <div className='space-y-1'>
                         {tests.map((test, index) => (
                             <div key={index} className='text-sm'>
@@ -182,9 +184,33 @@ export default function ProtocolPage() {
                         ))}
                     </div>
                 </ProtocolSection>
-
                 {/* 10 */}
-                <ProtocolSection title='10. Opis wykonania'>
+                <ProtocolSection title='10.Przygotowanie pomieszczenia i personelu'>
+                    <div className='space-y-3'>
+                        <div>
+                            <div className='font-semibold mb-1'>
+                                Pomieszczenie
+                            </div>
+                            <div className='space-y-1 text-sm'>
+                                {preparation.room.map((item, i) => (
+                                    <div key={i}>• {item}</div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className='font-semibold mb-1'>Personel</div>
+                            <div className='space-y-1 text-sm'>
+                                {preparation.staff.map((item, i) => (
+                                    <div key={i}>• {item}</div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </ProtocolSection>
+
+                {/* 11 */}
+                <ProtocolSection title='11. Opis wykonania'>
                     <EditableTextarea
                         value={extra.execution}
                         onChange={(value) => updateExtra('execution', value)}
@@ -192,8 +218,8 @@ export default function ProtocolPage() {
                     />{' '}
                 </ProtocolSection>
 
-                {/* 11 */}
-                <ProtocolSection title='11. Komentarz'>
+                {/* 12 */}
+                <ProtocolSection title='12. Komentarz'>
                     <EditableTextarea
                         value={extra.comment}
                         onChange={(value) => updateExtra('comment', value)}
@@ -201,8 +227,8 @@ export default function ProtocolPage() {
                     />
                 </ProtocolSection>
 
-                {/* 12 */}
-                <ProtocolSection title='12. Dawkowanie / trwałość / przechowywanie'>
+                {/* 13 */}
+                <ProtocolSection title='13. Dawkowanie / trwałość / przechowywanie'>
                     <div className='grid grid-cols-3 gap-2'>
                         <EditableInput
                             value={extra.dosing}
