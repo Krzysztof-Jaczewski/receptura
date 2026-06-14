@@ -4,6 +4,7 @@ import { UseFormRegister } from 'react-hook-form';
 import { ClipboardList } from 'lucide-react';
 import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 import { dosageForms } from '@/data/dosageForms';
+import { durationOptions, storageOptions } from '@/data/protocolDetailsOptions';
 
 type Props = {
     register: UseFormRegister<ProtocolFormValues>;
@@ -26,6 +27,7 @@ const ProtocolDetailsSection = ({ register }: Props) => {
             </div>
 
             <div className='grid grid-cols-3 gap-3'>
+                {/* Numer recepty */}
                 <div>
                     <p className={label}>Numer recepty</p>
                     <input
@@ -34,6 +36,7 @@ const ProtocolDetailsSection = ({ register }: Props) => {
                     />
                 </div>
 
+                {/* Postać leku */}
                 <div>
                     <p className={label}>Postać leku</p>
                     <select {...register('dosageForm')} className={input}>
@@ -45,6 +48,7 @@ const ProtocolDetailsSection = ({ register }: Props) => {
                     </select>
                 </div>
 
+                {/* Łączna ilość */}
                 <div>
                     <p className={label}>Łączna ilość</p>
                     <input
@@ -52,6 +56,41 @@ const ProtocolDetailsSection = ({ register }: Props) => {
                         {...register('totalAmount', { valueAsNumber: true })}
                         className={input}
                     />
+                </div>
+
+                {/* DAWKOWANIE */}
+                <div>
+                    <p className={label}>Dawkowanie</p>
+                    <input
+                        type='text'
+                        placeholder='np. 2x dziennie'
+                        {...register('extra.dosing')}
+                        className={input}
+                    />
+                </div>
+
+                {/* PRZECHOWYWANIE */}
+                <div>
+                    <p className={label}>Przechowywanie</p>
+                    <select {...register('extra.storage')} className={input}>
+                        {storageOptions.map((opt) => (
+                            <option key={opt.value} value={opt.value}>
+                                {opt.label}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
+                {/* TRWAŁOŚĆ */}
+                <div>
+                    <p className={label}>Trwałość</p>
+                    <select {...register('extra.duration')} className={input}>
+                        {durationOptions.map((opt) => (
+                            <option key={opt.value} value={opt.value}>
+                                {opt.label}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </div>
         </div>

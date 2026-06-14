@@ -12,8 +12,10 @@ import { defaultExtra } from '@/data/protocolDefaults';
 import { ProtocolWeighingTable } from '@/components/protocol/ProtocolWeighingTable';
 import { SignatureStampSection } from '@/components/protocol/SignatureStampSection';
 import { getIngredientById } from '@/lib/ingredients/getIngredientById';
-import { getTestsByDosageForm } from '@/lib/preparations/getTestsByDosageForm';
 import { getPreparation } from '@/lib/preparations/getPreparation';
+import { getTestsByDosageForm } from '@/lib/ingredients/getTestsByDosageForm';
+import { durationOptions, storageOptions } from '@/data/protocolDetailsOptions';
+import { dosageForms } from '@/data/dosageForms';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
@@ -130,7 +132,9 @@ export default function ProtocolPage() {
                 {/* 3 */}
                 <ProtocolSection title='3. Postać farmaceutyczna'>
                     <div className='font-medium capitalize'>
-                        {draft.dosageForm}
+                        {dosageForms.find(
+                            (form) => form.value === draft.dosageForm,
+                        )?.label || ''}
                     </div>
                 </ProtocolSection>
 
@@ -237,13 +241,21 @@ export default function ProtocolPage() {
                         />
 
                         <EditableInput
-                            value={extra.duration}
+                            value={
+                                durationOptions.find(
+                                    (opt) => opt.value === extra.duration,
+                                )?.label || ''
+                            }
                             onChange={(value) => updateExtra('duration', value)}
                             placeholder='Trwałość'
                         />
 
                         <EditableInput
-                            value={extra.storage}
+                            value={
+                                storageOptions.find(
+                                    (opt) => opt.value === extra.storage,
+                                )?.label || ''
+                            }
                             onChange={(value) => updateExtra('storage', value)}
                             placeholder='Przechowywanie'
                         />
