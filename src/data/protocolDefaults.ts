@@ -7,8 +7,8 @@ export const defaultExtra = {
     execution: '',
     comment: '',
     dosing: '',
-    duration: '',
-    storage: '',
+    duration: '14d',
+    storage: 'fridge',
     executionDate: new Date().toISOString().split('T')[0],
 };
 

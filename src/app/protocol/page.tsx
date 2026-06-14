@@ -149,6 +149,13 @@ export default function ProtocolPage() {
                             onChange={(value) => updateExtra('duration', value)}
                             label='Trwałość'
                         />
+                        <EditableInput
+                            label='Sterylność'
+                            value={draft.isSterile ? 'Jałowy' : 'Niejałowy'}
+                            onChange={(value) =>
+                                updateField('patientName', value)
+                            }
+                        />
                     </div>
                 </ProtocolSection>
 
