@@ -189,8 +189,8 @@ export default function ProtocolPage() {
                 {/*3 */}
                 <ProtocolSection title='3. Działanie i zastosowanie'>
                     <EditableTextarea
-                        value={extra.comment}
-                        onChange={(value) => updateExtra('comment', value)}
+                        value={extra.usage}
+                        onChange={(value) => updateExtra('usage', value)}
                         rows={1}
                     />
                 </ProtocolSection>

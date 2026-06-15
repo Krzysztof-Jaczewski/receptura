@@ -23,6 +23,7 @@ export const protocolSchema = z.object({
             packaging: z.string(),
             tests: z.string(),
             execution: z.string(),
+            usage: z.string(),
             comment: z.string(),
             dosing: z.string(),
             duration: z.string(),

@@ -5,6 +5,7 @@ export const defaultExtra = {
     packaging: 'tube_100',
     tests: '',
     execution: '',
+    usage: '',
     comment: '',
     dosing: '',
     duration: '14d',
