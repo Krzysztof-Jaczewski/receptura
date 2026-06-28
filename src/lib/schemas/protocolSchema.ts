@@ -25,8 +25,8 @@ export const protocolSchema = z.object({
             execution: z.string(),
             usage: z.string(),
             comment: z.string(),
-            dosing: z.string(),
-            duration: z.string(),
+            dosage: z.string(),
+            shelfLife: z.string(),
             storage: z.string(),
             executionDate: z.string(),
         })

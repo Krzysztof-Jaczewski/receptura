@@ -107,8 +107,8 @@ export default function ProtocolPage() {
                     </div>
                     <div className='grid grid-cols-3 gap-2'>
                         <EditableInput
-                            value={extra.dosing}
-                            onChange={(value) => updateExtra('dosing', value)}
+                            value={extra.dosage}
+                            onChange={(value) => updateExtra('dosage', value)}
                             label='Dawkowanie'
                         />
 
@@ -144,10 +144,12 @@ export default function ProtocolPage() {
                         <EditableInput
                             value={
                                 durationOptions.find(
-                                    (opt) => opt.value === extra.duration,
+                                    (opt) => opt.value === extra.shelfLife,
                                 )?.label || ''
                             }
-                            onChange={(value) => updateExtra('duration', value)}
+                            onChange={(value) =>
+                                updateExtra('shelfLife', value)
+                            }
                             label='Trwałość'
                         />
                         <EditableInput
@@ -207,11 +209,11 @@ export default function ProtocolPage() {
                 {/* 5  */}
                 <ProtocolSection title='5. Opakowanie leku'>
                     <EditableTextarea
-                        value={
+                        value={`${draft.isSterile ? 'Sterylny' : ''} ${
                             containerOptions.find(
                                 (opt) => opt.value === extra.packaging,
                             )?.label || ''
-                        }
+                        }`}
                         onChange={(value) => updateExtra('packaging', value)}
                         rows={1}
                     />
@@ -230,7 +232,7 @@ export default function ProtocolPage() {
                             <div className='font-semibold mb-1'>
                                 Pomieszczenie
                             </div>
-                            <div className='space-y-1 text-sm'>
+                            <div className='space-y-1 text-[10px]'>
                                 {preparation.room.map((item, i) => (
                                     <div key={i}>• {item}</div>
                                 ))}
@@ -239,7 +241,7 @@ export default function ProtocolPage() {
 
                         <div>
                             <div className='font-semibold mb-1'>Personel</div>
-                            <div className='space-y-1 text-sm'>
+                            <div className='space-y-1 text-[10px]'>
                                 {preparation.staff.map((item, i) => (
                                     <div key={i}>• {item}</div>
                                 ))}
@@ -260,7 +262,7 @@ export default function ProtocolPage() {
                 <ProtocolSection title='9.Badania po sporządzeniu'>
                     <div className='space-y-1'>
                         {tests.map((test, index) => (
-                            <div key={index} className='text-sm'>
+                            <div key={index} className='text-[12px]'>
                                 • {test}
                             </div>
                         ))}

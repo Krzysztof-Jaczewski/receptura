@@ -65,7 +65,7 @@ const ProtocolDetailsSection = ({ register }: Props) => {
                     <input
                         type='text'
                         placeholder='np. 2x dziennie'
-                        {...register('extra.dosing')}
+                        {...register('extra.dosage')}
                         className={input}
                     />
                 </div>
@@ -85,7 +85,7 @@ const ProtocolDetailsSection = ({ register }: Props) => {
                 {/* TRWAŁOŚĆ */}
                 <div>
                     <p className={label}>Trwałość</p>
-                    <select {...register('extra.duration')} className={input}>
+                    <select {...register('extra.shelfLife')} className={input}>
                         {durationOptions.map((opt) => (
                             <option key={opt.value} value={opt.value}>
                                 {opt.label}

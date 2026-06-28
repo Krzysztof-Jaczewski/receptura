@@ -18,6 +18,7 @@ import IngredientsSection from '@/components/protocol-form/IngredientsSection';
 
 import { FileText } from 'lucide-react';
 import { protocolDefaultValues } from '@/data/protocolDefaults';
+import RecipeTemplateSection from '@/components/protocol-form/RecipeTemplateSection';
 
 export default function Home() {
     const router = useRouter();
@@ -28,7 +29,7 @@ export default function Home() {
         defaultValues: protocolDefaultValues,
     });
 
-    const { register, handleSubmit, control, setValue } = form;
+    const { register, handleSubmit, control, setValue, reset } = form;
 
     const onSubmit = (data: ProtocolFormValues) => {
         const calculatedIngredients = calculateAdIngredient(
@@ -56,6 +57,9 @@ export default function Home() {
 
                 {/* FORM */}
                 <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
+                    {/* SZABLONY RECEPTY */}
+                    <RecipeTemplateSection reset={reset} />
+
                     {/* STERYLNOŚĆ */}
                     <SterilitySwitch control={control} setValue={setValue} />
 
