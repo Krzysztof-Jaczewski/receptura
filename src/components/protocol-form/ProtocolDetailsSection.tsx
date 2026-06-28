@@ -28,15 +28,6 @@ const ProtocolDetailsSection = ({ register }: Props) => {
             </div>
 
             <div className='grid grid-cols-3 gap-3'>
-                {/* Numer recepty */}
-                <div>
-                    <p className={label}>Numer recepty</p>
-                    <input
-                        {...register('prescriptionNumber')}
-                        className={input}
-                    />
-                </div>
-
                 {/* Postać leku */}
                 <div>
                     <p className={label}>Postać leku</p>
