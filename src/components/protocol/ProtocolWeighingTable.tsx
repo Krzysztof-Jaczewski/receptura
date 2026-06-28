@@ -31,6 +31,8 @@ export const ProtocolWeighingTable = ({
                     return resolved.map((r, i) => (
                         <tr
                             key={`${index}-${i}`}
+                            contentEditable
+                            suppressContentEditableWarning
                             className='border-b last:border-b-0'
                         >
                             <td className='p-2'>{r.name}</td>

@@ -23,7 +23,7 @@ export const EditableInput = ({
                 value={value}
                 placeholder={placeholder}
                 onChange={(e) => onChange(e.target.value)}
-                className='w-full border rounded-lg px-3 py-2 text-sm'
+                className='w-full border rounded-lg px-3 py-2 text-xs'
             />
         </div>
     );

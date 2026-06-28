@@ -107,12 +107,6 @@ export default function ProtocolPage() {
                     </div>
                     <div className='grid grid-cols-3 gap-2'>
                         <EditableInput
-                            value={extra.dosage}
-                            onChange={(value) => updateExtra('dosage', value)}
-                            label='Dawkowanie'
-                        />
-
-                        <EditableInput
                             value={
                                 storageOptions.find(
                                     (opt) => opt.value === extra.storage,
@@ -128,6 +122,13 @@ export default function ProtocolPage() {
                                     (form) => form.value === draft.dosageForm,
                                 )?.label || ''
                             }
+                            onChange={(value) =>
+                                updateField('patientName', value)
+                            }
+                        />
+                        <EditableInput
+                            label='Sterylność'
+                            value={draft.isSterile ? 'Jałowy' : 'Niejałowy'}
                             onChange={(value) =>
                                 updateField('patientName', value)
                             }
@@ -152,41 +153,28 @@ export default function ProtocolPage() {
                             }
                             label='Trwałość'
                         />
-                        <EditableInput
-                            label='Sterylność'
-                            value={draft.isSterile ? 'Jałowy' : 'Niejałowy'}
-                            onChange={(value) =>
-                                updateField('patientName', value)
-                            }
-                        />
                     </div>
                 </ProtocolSection>
 
                 {/* 2 */}
                 <ProtocolSection title='2. Skład recepty'>
-                    <div className='space-y-1'>
+                    <div
+                        contentEditable
+                        suppressContentEditableWarning
+                        className='border rounded-lg p-3 bg-gray-50 '
+                    >
                         {draft.ingredients.map((ingredient, index) => {
                             const ing = getIngredientById(
                                 ingredient.ingredientId,
                             );
 
                             return (
-                                <div
-                                    key={index}
-                                    className='flex items-center gap-3 border rounded-lg px-3 py-2 bg-gray-50'
-                                >
-                                    <div className='font-medium flex-1'>
-                                        {ing?.name}
-                                    </div>
-
-                                    <div className='font-semibold text-blue-700 whitespace-nowrap'>
-                                        {!ingredient.amount.includes('ad')
-                                            ? Number(ingredient.amount).toFixed(
-                                                  1,
-                                              )
-                                            : ingredient.amount}{' '}
-                                        g
-                                    </div>
+                                <div key={index}>
+                                    {ing?.name}{' '}
+                                    {!ingredient.amount.includes('ad')
+                                        ? Number(ingredient.amount).toFixed(1)
+                                        : ingredient.amount}{' '}
+                                    g
                                 </div>
                             );
                         })}
@@ -194,11 +182,16 @@ export default function ProtocolPage() {
                 </ProtocolSection>
 
                 {/*3 */}
-                <ProtocolSection title='3. Działanie i zastosowanie'>
-                    <EditableTextarea
+                <ProtocolSection title='3. Dawkowanie i zastosowanie'>
+                    <EditableInput
+                        value={extra.dosage}
+                        onChange={(value) => updateExtra('dosage', value)}
+                        label='Dawkowanie'
+                    />
+                    <EditableInput
                         value={extra.usage}
                         onChange={(value) => updateExtra('usage', value)}
-                        rows={1}
+                        label='Zastosowanie'
                     />
                 </ProtocolSection>
 
@@ -237,7 +230,7 @@ export default function ProtocolPage() {
                             <div className='font-semibold mb-1'>
                                 Pomieszczenie
                             </div>
-                            <div className='space-y-1 text-[10px]'>
+                            <div className='space-y-1 text-xs'>
                                 {preparation.room.map((item, i) => (
                                     <div key={i}>• {item}</div>
                                 ))}
@@ -246,7 +239,7 @@ export default function ProtocolPage() {
 
                         <div>
                             <div className='font-semibold mb-1'>Personel</div>
-                            <div className='space-y-1 text-[10px]'>
+                            <div className='space-y-1 text-xs'>
                                 {preparation.staff.map((item, i) => (
                                     <div key={i}>• {item}</div>
                                 ))}
@@ -260,14 +253,14 @@ export default function ProtocolPage() {
                     <EditableTextarea
                         value={extra.execution}
                         onChange={(value) => updateExtra('execution', value)}
-                        rows={5}
+                        rows={8}
                     />{' '}
                 </ProtocolSection>
                 {/* 9 */}
                 <ProtocolSection title='9.Badania po sporządzeniu'>
                     <div className='space-y-1'>
                         {tests.map((test, index) => (
-                            <div key={index} className='text-[12px]'>
+                            <div key={index} className='text-xs'>
                                 • {test}
                             </div>
                         ))}
