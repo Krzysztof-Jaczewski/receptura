@@ -180,7 +180,12 @@ export default function ProtocolPage() {
                                     </div>
 
                                     <div className='font-semibold text-blue-700 whitespace-nowrap'>
-                                        {Number(ingredient.amount).toFixed(1)} g
+                                        {!ingredient.amount.includes('ad')
+                                            ? Number(ingredient.amount).toFixed(
+                                                  1,
+                                              )
+                                            : ingredient.amount}{' '}
+                                        g
                                     </div>
                                 </div>
                             );

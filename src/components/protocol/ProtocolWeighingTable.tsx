@@ -23,7 +23,9 @@ export const ProtocolWeighingTable = ({
                 {ingredients.flatMap((ingredient, index) => {
                     const resolved = resolveIngredient(
                         ingredient.ingredientId,
-                        Number(ingredient.amount),
+                        Number(
+                            ingredient.calculatedAmount ?? ingredient.amount,
+                        ),
                     );
 
                     return resolved.map((r, i) => (
@@ -34,7 +36,10 @@ export const ProtocolWeighingTable = ({
                             <td className='p-2'>{r.name}</td>
 
                             <td className='p-2 text-center'>
-                                {r.amount.toFixed(2)} g
+                                {Number.isInteger(r?.amount)
+                                    ? r.amount.toFixed(1)
+                                    : r?.amount.toFixed(3)}{' '}
+                                g
                             </td>
 
                             <td className='p-2'>{ingredient.producer}</td>

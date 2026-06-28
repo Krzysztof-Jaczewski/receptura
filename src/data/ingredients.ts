@@ -47,6 +47,11 @@ export const ingredientOptions: IngredientOption[] = [
         category: 'vehicle',
     },
     {
+        id: 'glycerini',
+        name: 'Glyceryni',
+        category: 'vehicle',
+    },
+    {
         id: 'hydrocortisoni',
         name: 'Hydrocortisoni',
         category: 'active',
@@ -69,6 +74,11 @@ export const ingredientOptions: IngredientOption[] = [
     {
         id: 'nystatini',
         name: 'Nystatini',
+        category: 'active',
+    },
+    {
+        id: 'oleum_menthae_piperitae',
+        name: 'Oleum menthae pip. gtt',
         category: 'active',
     },
     {

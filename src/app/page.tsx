@@ -32,10 +32,12 @@ export default function Home() {
     const { register, handleSubmit, control, setValue, reset } = form;
 
     const onSubmit = (data: ProtocolFormValues) => {
+        console.log(data.totalAmount);
         const calculatedIngredients = calculateAdIngredient(
+            data.totalAmount,
             data.ingredients,
         ) as ProtocolFormValues['ingredients'];
-
+        console.log(calculatedIngredients);
         setFormData({
             ...data,
             ingredients: calculatedIngredients,
