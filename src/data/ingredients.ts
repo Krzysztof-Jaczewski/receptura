@@ -23,9 +23,15 @@ export const ingredientOptions: IngredientOption[] = [
     },
     {
         id: 'detreomycini',
-        name: 'Detreomycini',
+        name: 'Chloramfenicol',
         category: 'active',
     },
+    {
+        id: 'devikap',
+        name: 'Devikap sol.',
+        category: 'active',
+    },
+
     {
         id: 'ethanoli_70',
         name: 'Ethanoli 70%',
@@ -52,6 +58,11 @@ export const ingredientOptions: IngredientOption[] = [
         category: 'vehicle',
     },
     {
+        id: 'hascobaza',
+        name: 'Hascobaza',
+        category: 'base',
+    },
+    {
         id: 'hydrocortisoni',
         name: 'Hydrocortisoni',
         category: 'active',
@@ -59,6 +70,11 @@ export const ingredientOptions: IngredientOption[] = [
     {
         id: 'lanolini',
         name: 'Lanolini',
+        category: 'base',
+    },
+    {
+        id: 'linomag',
+        name: 'Linomag sol',
         category: 'base',
     },
     {

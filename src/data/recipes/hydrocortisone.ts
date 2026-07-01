@@ -6,7 +6,7 @@ const execution = [
     '1. Do wytarowanego pojemnika odważam odpowiednią ilość podłoża',
     '2. Na wytarowanej podkładce pergaminowej odważam odpowiadającą ilość składnika',
     '3. Wsypuje składnik do pojemnika z podłożem i mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo co 5 sekund zwiększając je ',
-    '4. Po zakończeniu mieszania wyjmuje mieszadło, zakłada pokrywę i naklejam uzupełnioną etykietę',
+    '4. Po zakończeniu mieszania wyjmuje mieszadło, zakładam pokrywę i naklejam uzupełnioną etykietę',
     '5. Sprzątam stanowisko pracy',
 ];
 
