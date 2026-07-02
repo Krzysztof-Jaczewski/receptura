@@ -17,6 +17,7 @@ import { getTestsByDosageForm } from '@/lib/ingredients/getTestsByDosageForm';
 import { durationOptions, storageOptions } from '@/data/protocolDetailsOptions';
 import { dosageForms } from '@/data/dosageForms';
 import { containerOptions } from '@/data/containers';
+import { DisplayField } from '@/components/protocol/DisplayField';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
@@ -32,20 +33,6 @@ export default function ProtocolPage() {
     }
 
     const extra = draft.extra ?? defaultExtra;
-
-    const updateField = <K extends keyof ProtocolFormValues>(
-        field: K,
-        value: ProtocolFormValues[K],
-    ) => {
-        setDraft((prev) =>
-            prev
-                ? {
-                      ...prev,
-                      [field]: value,
-                  }
-                : prev,
-        );
-    };
 
     const updateExtra = <
         K extends keyof NonNullable<ProtocolFormValues['extra']>,
@@ -82,76 +69,60 @@ export default function ProtocolPage() {
                 {/* 1 */}
                 <ProtocolSection title='1. Dane podstawowe'>
                     <div className='grid grid-cols-3 gap-3'>
-                        <EditableInput
-                            value={draft.prescriptionNumber}
-                            onChange={(value) =>
-                                updateField('prescriptionNumber', value)
-                            }
+                        <DisplayField
                             label='Nr recepty/Nr kontrolny'
+                            value={draft.prescriptionNumber}
                         />
 
-                        <EditableInput
+                        <DisplayField
+                            label='Imię i nazwisko pacjenta'
                             value={draft.patientName}
-                            onChange={(value) =>
-                                updateField('patientName', value)
-                            }
-                            label='Imie i nazwisko pacjenta'
                         />
-                        <EditableInput
+
+                        <DisplayField
+                            label='Imię i nazwisko lekarza'
                             value={draft.doctorName}
-                            onChange={(value) =>
-                                updateField('doctorName', value)
-                            }
-                            label='Imie i nazwisko lekarza'
                         />
                     </div>
-                    <div className='grid grid-cols-3 gap-2'>
-                        <EditableInput
+
+                    <div className='grid grid-cols-3 gap-3'>
+                        <DisplayField
+                            label='Przechowywanie'
                             value={
                                 storageOptions.find(
                                     (opt) => opt.value === extra.storage,
-                                )?.label || ''
+                                )?.label
                             }
-                            onChange={(value) => updateExtra('storage', value)}
-                            label='Przechowywanie'
                         />
-                        <EditableInput
+
+                        <DisplayField
                             label='Postać farmaceutyczna'
                             value={
                                 dosageForms.find(
                                     (form) => form.value === draft.dosageForm,
-                                )?.label || ''
-                            }
-                            onChange={(value) =>
-                                updateField('patientName', value)
+                                )?.label
                             }
                         />
-                        <EditableInput
+
+                        <DisplayField
                             label='Sterylność'
                             value={draft.isSterile ? 'Jałowy' : 'Niejałowy'}
-                            onChange={(value) =>
-                                updateField('patientName', value)
-                            }
                         />
                     </div>
-                    <div className='grid grid-cols-3 gap-2'>
-                        <EditableInput
+
+                    <div className='grid grid-cols-3 gap-3'>
+                        <DisplayField
                             label='Data wykonania'
                             value={extra.executionDate}
-                            onChange={(value) =>
-                                updateField('patientName', value)
-                            }
                         />
-                        <EditableInput
+
+                        <DisplayField
+                            label='Trwałość'
                             value={
                                 durationOptions.find(
                                     (opt) => opt.value === extra.shelfLife,
-                                )?.label || ''
+                                )?.label
                             }
-                            onChange={(value) =>
-                                updateExtra('shelfLife', value)
-                            }
-                            label='Trwałość'
                         />
                     </div>
                 </ProtocolSection>
