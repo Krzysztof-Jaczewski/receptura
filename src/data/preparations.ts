@@ -10,7 +10,7 @@ export const preparationSteps: Record<
     nonSterile: {
         room: [
             'Sprawdzono czystość oraz przygotowanie stanowiska pracy do wykonania leku.',
-            'Wykonano dezynfekcję powierzchni roboczej środkiem alkoholowym (ok. 70%).',
+            'Wykonano dezynfekcję powierzchni roboczej środkiem na bazie alkoholu (ok. 70%).',
             'Przygotowano niezbędny sprzęt recepturowy oraz opakowania.',
             'Zweryfikowano stan techniczny urządzeń wykorzystywanych w procesie sporządzania.',
             'Sprawdzono termin ważności oraz oznakowanie surowców farmaceutycznych.',
@@ -27,16 +27,17 @@ export const preparationSteps: Record<
         room: [
             'Przygotowano i zdezynfekowano komorę laminarną zgodnie z procedurą aseptyczną.',
             'Wykonano dezynfekcję obszaru roboczego od strefy najwyższej czystości do zewnętrznej.',
-            'Uruchomiono komorę laminarną i przeprowadzono jej wyjaławianie przez wymagany czas.',
+'Sprawdzono termin ważności oraz oznakowanie surowców farmaceutycznych.',
+            'Uruchomiono komorę laminarną i przeprowadzono jej wyjaławianie przez 30 min.',
             'Przygotowano wyłącznie jałowy lub wyjałowiony sprzęt oraz opakowania.',
             'Zapewniono utrzymanie warunków aseptycznych oraz ograniczenie dostępu do strefy pracy.',
         ],
         staff: [
-            'Wykonano higieniczne mycie rąk zgodnie z techniką mycia rąk.',
-            'Założono odzież dedykowaną do pracy w warunkach jałowych.',
+            'Wykonano higieniczne mycie rąk zgodnie z techniką higienicznego mycia rąk.',
             'Założono czepek, maskę oraz środki ochrony indywidualnej wymagane dla aseptyki.',
-            'Wykonano ponowną dezynfekcję rąk preparatem alkoholowym.',
-            'Założono jałowy fartuch oraz jałowe rękawice w warunkach aseptycznych.',
+            'Wykonano ponowną dezynfekcję rąk preparatem na bazie alkoholu',
+        'Założono jałowy fartuch przystosowany do pracy w warunkach jałowych',
+'Po wejściu na recepture założono jałowe rękawice z zachowaniem zasad postępowania aseptycznego ',
         ],
     },
 };
