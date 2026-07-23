@@ -34,10 +34,10 @@ export const preparationSteps: Record<
         ],
         staff: [
             'Wykonano higieniczne mycie rąk zgodnie z techniką higienicznego mycia rąk.',
-            'Założono czepek, maskę oraz środki ochrony indywidualnej wymagane dla aseptyki.',
-            'Wykonano ponowną dezynfekcję rąk preparatem na bazie alkoholu',
-        'Założono jałowy fartuch przystosowany do pracy w warunkach jałowych',
-'Po wejściu na recepture założono jałowe rękawice z zachowaniem zasad postępowania aseptycznego ',
+'Wykonano dezynfekcję rąk preparatem do chirurgicznej dezynfekcji skóry(Manusan)',
+            'Zalożono zestaw odzieży wymagany do pracy w warunkach aseptycznych(fatuch, czepek,maska ochnonna, ochraniacze na buty)',
+            'Wykonano dezynfekcję rąk preparatem do chirurgicznej dezynfekcji skóry(Manusan)',
+'Założono jałowe rękawice przystapiono do pracy w warunkach aseptycznych',
         ],
     },
 };
