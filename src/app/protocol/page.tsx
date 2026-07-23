@@ -62,7 +62,7 @@ export default function ProtocolPage() {
                 {/* HEADER */}
                 <div className='border-b pb-2'>
                  <div className=' text-center'>
-                        Dbam o Zdrowie <br />
+                       Apteka Dbam o Zdrowie <br />
 04-713 Warszawa, Żegańska 22 E <br />
 REGON 001375127, BDO 000114189<br />
 NIP 5210083087
