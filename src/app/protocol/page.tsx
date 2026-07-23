@@ -61,7 +61,13 @@ export default function ProtocolPage() {
             <div className='bg-white w-[210mm] min-h-[297mm] shadow-xl rounded-lg p-6 text-[12px] text-gray-900 space-y-3'>
                 {/* HEADER */}
                 <div className='border-b pb-2'>
-                    <h1 className='text-lg font-bold uppercase tracking-wider text-center'>
+                 <div className=' text-center'>
+                        Dbam o zdrowie </br>
+04-713 Warszawa, Żegańska 22 E </br>
+REGON 0001375127, BDO 000114189</br>
+NIP 5210083087
+                    </div>   
+<h1 className='text-lg font-bold uppercase tracking-wider text-center'>
                         Protokół wykonania leku recepturowego
                     </h1>
                 </div>
