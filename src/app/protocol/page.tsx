@@ -117,7 +117,7 @@ export default function ProtocolPage() {
                         />
 
                         <DisplayField
-                            label='Trwałość'
+                            label='Trwałość od daty wykonania'
                             value={
                                 durationOptions.find(
                                     (opt) => opt.value === extra.shelfLife,
