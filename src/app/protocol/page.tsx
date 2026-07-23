@@ -210,7 +210,7 @@ const amount = Number(ingredient.amount);
                             </div>
                             <div className='space-y-1 text-xs'>
                                 {preparation.room.map((item, i) => (
-                                    <div key={i}>• {item}</div>
+                                    <div key={i}>{i+1}. {item}</div>
                                 ))}
                             </div>
                         </div>
@@ -219,7 +219,7 @@ const amount = Number(ingredient.amount);
                             <div className='font-semibold mb-1'>Personel</div>
                             <div className='space-y-1 text-xs'>
                                 {preparation.staff.map((item, i) => (
-                                    <div key={i}>• {item}</div>
+                                    <div key={i}> {i+1}. {item}</div>
                                 ))}
                             </div>
                         </div>
