@@ -184,7 +184,7 @@ NIP 5210083087
                 {/* 5  */}
                 <ProtocolSection title='5. Opakowanie leku'>
                     <EditableTextarea
-                        value={`${draft.isSterile ? 'Sterylny' : ''} ${
+                        value={`${draft.isSterile ? 'Sterylna' : ''} ${
                             containerOptions.find(
                                 (opt) => opt.value === extra.packaging,
                             )?.label || ''
