@@ -64,7 +64,7 @@ export default function ProtocolPage() {
                  <div className=' text-center'>
                         Dbam o Zdrowie <br />
 04-713 Warszawa, Żegańska 22 E <br />
-REGON 0001375127, BDO 000114189<br />
+REGON 001375127, BDO 000114189<br />
 NIP 5210083087
                     </div>   
 <h1 className='text-lg font-bold uppercase tracking-wider text-center'>
