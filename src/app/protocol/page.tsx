@@ -62,9 +62,9 @@ export default function ProtocolPage() {
                 {/* HEADER */}
                 <div className='border-b pb-2'>
                  <div className=' text-center'>
-                        Dbam o zdrowie <br>
-04-713 Warszawa, Żegańska 22 E <br>
-REGON 0001375127, BDO 000114189<br>
+                        Dbam o zdrowie <br />
+04-713 Warszawa, Żegańska 22 E <br />
+REGON 0001375127, BDO 000114189<br />
 NIP 5210083087
                     </div>   
 <h1 className='text-lg font-bold uppercase tracking-wider text-center'>
@@ -145,12 +145,13 @@ NIP 5210083087
                                 ingredient.ingredientId,
                             );
 
+const amount = Number(ingredient.amount);
                             return (
                                 <div key={index}>
                                     {ing?.name}{' '}
-                                    {!ingredient.amount.includes('ad')
-                                        ? Number(ingredient.amount).toFixed(1)
-                                        : ingredient.amount}{' '}
+                                  {Number.isFinite(amount)
+    ? amount.toFixed(1)
+    : ingredient.amount}  
                                     g
                                 </div>
                             );
