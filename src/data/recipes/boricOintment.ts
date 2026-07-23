@@ -16,7 +16,7 @@ const execution = [
     '3. Do wytarowanej zlewki odważam odpowiednią ilość wody destylowanej.',
     '4. Wodę destylowaną podgrzewam na łaźni wodnej do temperatury 40-50°C i rozpuszczam w niej kwas borowy.',
     '5. Do tuby z podłożem dodaję roztwór kwasu borowego i mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
-    '6. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę i naklejam uzupełnioną etykietę.',
+    '6. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę i naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce .',
     '7. Sprzątam stanowisko pracy.',
 ];
 
