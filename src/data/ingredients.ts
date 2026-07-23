@@ -73,6 +73,11 @@ export const ingredientOptions: IngredientOption[] = [
         category: 'base',
     },
     {
+        id: 'lekobase',
+        name: 'Lekobaza',
+        category: 'base',
+    },
+    {
         id: 'linomag',
         name: 'Linomag sol',
         category: 'base',
