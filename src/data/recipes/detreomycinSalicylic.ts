@@ -61,7 +61,7 @@ export const detreomycinSalicylicRecipe: {
         extra: {
             packaging: 'bottle_100',
             shelfLife: '30d',
-            storage: 'fridge',
+                        storage: 'roomTemperature',
             calculations: calculations.join('\n'),
             execution: execution.join('\n'),
             usage: 'Preparat do stosowania na skórę o działaniu przeciwbakteryjnym i keratolitycznym.',
