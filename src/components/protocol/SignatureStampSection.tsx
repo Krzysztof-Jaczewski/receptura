@@ -2,7 +2,7 @@
 
 export const SignatureStampSection = () => {
     return (
-        <div className='flex w-1/2 ml-auto justify-center border rounded-lg p-1 pt-16'>
+        <div className='flex w-1/2 ml-auto justify-center border rounded-lg p-1 pt-12'>
             <div className='flex flex-col items-end '>
                 <div className='text-gray-400 text-sm tracking-widest'>
                     .....................................................
