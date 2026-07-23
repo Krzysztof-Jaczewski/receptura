@@ -138,7 +138,7 @@ NIP 5210083087
                     <div
                         contentEditable
                         suppressContentEditableWarning
-                        className='border rounded-lg p-3 bg-gray-50 '
+                        className='border rounded-lg p-2 bg-gray-50 '
                     >
                         {draft.ingredients.map((ingredient, index) => {
                             const ing = getIngredientById(
@@ -157,10 +157,21 @@ const amount = Number(ingredient.amount);
                             );
                         })}
                     </div>
+
+{/*3 */}
+                </ProtocolSection>
+<ProtocolSection title='3. Etapy realizacji'>
+                    <div
+                        contentEditable
+                        suppressContentEditableWarning
+                        className='border rounded-lg p-2 bg-gray-50 '
+                    >
+                       
+                    </div>
                 </ProtocolSection>
 
-                {/*3 */}
-                <ProtocolSection title='3. Dawkowanie i zastosowanie'>
+                {/*4 */}
+                <ProtocolSection title='4. Dawkowanie i zastosowanie'>
                     <EditableInput
                         value={extra.dosage}
                         onChange={(value) => updateExtra('dosage', value)}
@@ -173,8 +184,9 @@ const amount = Number(ingredient.amount);
                     />
                 </ProtocolSection>
 
-                {/* 4 */}
-                <ProtocolSection title='4. Obliczenia składników'>
+                {/* 5 */}
+                <ProtocolSection title='4
+5. Obliczenia składników'>
                     <EditableTextarea
                         value={extra.calculations}
                         onChange={(value) => updateExtra('calculations', value)}
@@ -182,8 +194,8 @@ const amount = Number(ingredient.amount);
                     />
                 </ProtocolSection>
 
-                {/* 5  */}
-                <ProtocolSection title='5. Opakowanie leku'>
+                {/* 6  */}
+                <ProtocolSection title='6. Opakowanie leku'>
                     <EditableTextarea
                         value={`${draft.isSterile ? 'Sterylna' : ''} ${
                             containerOptions.find(
@@ -195,14 +207,14 @@ const amount = Number(ingredient.amount);
                     />
                 </ProtocolSection>
 
-                {/* 6 */}
-                <ProtocolSection title='6. Odważanie składników'>
+                {/* 7 */}
+                <ProtocolSection title='7. Odważanie składników'>
                     <ProtocolWeighingTable ingredients={draft.ingredients} />
                 </ProtocolSection>
 
-                {/* 7 */}
+                {/* 8 */}
 
-                <ProtocolSection title='7. Przygotowanie pomieszczenia i personelu'>
+                <ProtocolSection title='8. Przygotowanie pomieszczenia i personelu'>
                     <div className='space-y-3'>
                         <div>
                             <div className='font-semibold mb-1'>
@@ -225,17 +237,17 @@ const amount = Number(ingredient.amount);
                         </div>
                     </div>
                 </ProtocolSection>
-                {/* 8 */}
+                {/* 9 */}
 
-                <ProtocolSection title='8. Opis wykonania'>
+                <ProtocolSection title='9. Opis wykonania'>
                     <EditableTextarea
                         value={extra.execution}
                         onChange={(value) => updateExtra('execution', value)}
-                        rows={8}
+                        rows={10}
                     />{' '}
                 </ProtocolSection>
-                {/* 9 */}
-                <ProtocolSection title='9.Badania po sporządzeniu'>
+                {/* 10 */}
+                <ProtocolSection title='10.Badania po sporządzeniu'>
                     <div className='space-y-1'>
                         {tests.map((test, index) => (
                             <div key={index} className='text-xs'>
@@ -245,8 +257,8 @@ const amount = Number(ingredient.amount);
                     </div>
                 </ProtocolSection>
 
-                {/*10 */}
-                <ProtocolSection title='10. Komentarz'>
+                {/*11 */}
+                <ProtocolSection title='11. Komentarz'>
                     <EditableTextarea
                         value={extra.comment}
                         onChange={(value) => updateExtra('comment', value)}
