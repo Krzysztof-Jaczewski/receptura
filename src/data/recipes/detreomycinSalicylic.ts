@@ -11,7 +11,7 @@ const execution = [
     '2. Odważam kwas salicylowy pod lożą laminarną na podkładce pergaminowej, wsypuję do zlewki ze spirytusem. i mieszam do całkowitego rozpuszczenia.',
     '3. Odważam Detreomycynę pod lożą laminarną na podkładce pergaminowej i wsypuję do zlewki i mieszam do całkowitego rozpuszczenia .',
     '4. Do zlewki odważam odpowiednią ilość gliceryny i mieszam do całkowitego rozpuszczenia.',
-    '5. Przenoszę preparat do jałowej butelki, szczelnie zamykam i naklejam uzupełnioną etykietę.',
+    '5. Przenoszę preparat do jałowej butelki, szczelnie zamykam i naklejam uzupełnioną etykietę i naklejkę chronić od światła.',
     '6. Sprzątam stanowisko pracy zgodnie z procedurą.',
 ];
 export const detreomycinSalicylicRecipe: {
