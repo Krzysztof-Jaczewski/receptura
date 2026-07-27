@@ -19,7 +19,7 @@ const execution = [
     '6. Wodę destylowaną podgrzewam na łaźni wodnej do temperatury 40-50°C i rozpuszczam w niej kwas borowy.',
     '7. Dodaję 3% roztwór kwasu borowego i mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
     '8. do tuby dodaję odpowiednią ilość witaminy A. i mieszam przez 1 minutę na małych obrotach ',
-    '9. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę i naklejam uzupełnioną etykietę.',
+    '9. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
     '10. Sprzątam stanowisko pracy.',
 ];
 

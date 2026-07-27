@@ -10,7 +10,7 @@ const execution = [
     '4. Wodę destylowaną podgrzewam na łaźni wodnej w celu ułatwienia rozpuszczenia mocznika.',
     '5. Dodaję mocznik do podgrzanej wody i mieszam do całkowitego rozpuszczenia.',
     '6. Dodaję przygotowany roztwór do euceryny i mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
-    '7. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę i naklejam uzupełnioną etykietę.',
+    '7. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
     '8. Sprzątam stanowisko pracy.',
 ];
 

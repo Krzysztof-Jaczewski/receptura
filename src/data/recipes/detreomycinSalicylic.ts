@@ -11,7 +11,7 @@ const execution = [
     '2. Odważam kwas salicylowy pod lożą laminarną na podkładce pergaminowej, wsypuję do zlewki ze spirytusem. i mieszam do całkowitego rozpuszczenia.',
     '3. Odważam Detreomycynę pod lożą laminarną na podkładce pergaminowej i wsypuję do zlewki i mieszam do całkowitego rozpuszczenia .',
     '4. Do zlewki odważam odpowiednią ilość gliceryny i mieszam do całkowitego rozpuszczenia.',
-    '5. Przenoszę preparat do jałowej butelki, szczelnie zamykam i naklejam uzupełnioną etykietę i naklejkę chronić od światła.',
+    '5. Przenoszę preparat do jałowej butelki, szczelnie zamykam, naklejam uzupełnioną etykietę i naklejkę chronić od światła.',
     '6. Sprzątam stanowisko pracy zgodnie z procedurą.',
 ];
 export const detreomycinSalicylicRecipe: {
@@ -61,7 +61,7 @@ export const detreomycinSalicylicRecipe: {
         extra: {
             packaging: 'bottle_100',
             shelfLife: '30d',
-                        storage: 'roomTemperature',
+            storage: 'roomTemperature',
             calculations: calculations.join('\n'),
             execution: execution.join('\n'),
             usage: 'Preparat do stosowania na skórę o działaniu przeciwbakteryjnym i keratolitycznym.',

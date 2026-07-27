@@ -10,7 +10,7 @@ const execution = [
     '1. Do wytarowanej tuby odważam odpowiednią ilość Ung. cholesteroli.',
     '2. Dodaję odpowiednią ilość wody destylowanej.',
     '3. Mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
-    '4. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę i naklejam uzupełnioną etykietę.',
+    '4. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
     '5. Sprzątam stanowisko pracy.',
 ];
 

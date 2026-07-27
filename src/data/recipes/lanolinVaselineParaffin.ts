@@ -6,7 +6,7 @@ const calculations = ['Obliczanie ilości substancji:', '100g : 3 = 33,333g'];
 const execution = [
     '1. Do wytarowanej tuby odważam odpowiednią ilość lanoliny, wazeliny oraz parafiny ciekłej.',
     '2. Mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
-    '3. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę i naklejam uzupełnioną etykietę.',
+    '3. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
     '4. Sprzątam stanowisko pracy.',
 ];
 

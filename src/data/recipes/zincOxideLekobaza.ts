@@ -8,7 +8,7 @@ const execution = [
     '2. Na wytarowanej podkładce pergaminowej odważam odpowiednią ilość tlenku cynku.',
     '3. Do wytarowanej zlewki odważam wodę destylowaną.',
     '4. Przenoszę składniki do tuby z podłożem i mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
-    '5. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę i naklejam uzupełnioną etykietę.',
+    '5. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
     '6. Sprzątam stanowisko pracy.',
 ];
 
@@ -41,7 +41,7 @@ export const zincOxideLekobazaRecipe: {
                 expiryDate: '',
             },
             {
-                ingredientId: 'lekobaza',
+                ingredientId: 'lekobase',
                 amount: 'ad 100',
                 producer: 'Fagron',
                 batch: '',

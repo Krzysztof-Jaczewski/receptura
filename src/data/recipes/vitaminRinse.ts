@@ -12,7 +12,7 @@ const execution = [
     '1. Do wytarowanej butelki odważam odpowiednią ilość gliceryny',
     '2. Następnie dolewam odpowiednią ilość witaminy E i witaminy A ',
     '3. Na koniec wkraplam odpowiednią ilość olejku miętowego ',
-    '4. Zakręcam butelkę i wstrząsam do całkowitego wymieszania składników i naklejam uzupełnioną etykietę oraz nalepkę wstrząsnąć przed użyciem',
+    '4. Zakręcam butelkę i wstrząsam do całkowitego wymieszania składników, naklejam uzupełnioną etykietę oraz nalepkę wstrząsnąć przed użyciem i naklejkę przechowywać w lodówce',
     '5. Sprzątam stanowisko pracy',
 ];
 
