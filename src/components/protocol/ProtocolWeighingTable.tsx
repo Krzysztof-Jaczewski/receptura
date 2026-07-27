@@ -11,11 +11,11 @@ export const ProtocolWeighingTable = ({
         <table className='w-full border rounded-lg overflow-hidden text-[11px]'>
             <thead>
                 <tr className='bg-gray-100 border-b'>
-                    <th className='text-left p-2'>Składnik</th>
-                    <th className='text-center p-2'>Ilość</th>
-                    <th className='text-left p-2'>Producent</th>
-                    <th className='text-center p-2'>Seria</th>
-                    <th className='text-center p-2'>Data ważności</th>
+                    <th className='text-left p-1'>Składnik</th>
+                    <th className='text-center p-1'>Ilość</th>
+                    <th className='text-left p-1'>Producent</th>
+                    <th className='text-center p-1'>Seria</th>
+                    <th className='text-center p-1'>Data ważności</th>
                 </tr>
             </thead>
 
@@ -35,22 +35,22 @@ export const ProtocolWeighingTable = ({
                             suppressContentEditableWarning
                             className='border-b last:border-b-0'
                         >
-                            <td className='p-2'>{r.name}</td>
+                            <td className='p-0.5'>{r.name}</td>
 
-                            <td className='p-2 text-center'>
+                            <td className='p-0.5 text-center'>
                                 {Number.isInteger(r?.amount)
                                     ? r.amount.toFixed(1)
                                     : r?.amount.toFixed(3)}{' '}
                                 g
                             </td>
 
-                            <td className='p-2'>{ingredient.producer}</td>
+                            <td className='p-0.5'>{ingredient.producer}</td>
 
-                            <td className='p-2 text-center'>
+                            <td className='p-0.5 text-center'>
                                 {ingredient.batch}
                             </td>
 
-                            <td className='p-2 text-center'>
+                            <td className='p-0.5 text-center'>
                                 {ingredient.expiryDate}
                             </td>
                         </tr>

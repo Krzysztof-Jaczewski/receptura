@@ -60,14 +60,15 @@ export default function ProtocolPage() {
         <div className='bg-gray-100 min-h-screen py-6 flex justify-center'>
             <div className='bg-white w-[210mm] min-h-[297mm] shadow-xl rounded-lg p-6 text-[12px] text-gray-900 space-y-3'>
                 {/* HEADER */}
-                <div className='border-b pb-2'>
-                 <div className=' text-center'>
-                       Apteka Dbam o Zdrowie <br />
-04-713 Warszawa, Żegańska 22 E <br />
-REGON 001375127, BDO 000114189<br />
-NIP 5210083087
-                    </div>   
-<h1 className='text-lg font-bold uppercase tracking-wider text-center'>
+                <div>
+                    <div className=' text-center'>
+                        Apteka Dbam o Zdrowie <br />
+                        04-713 Warszawa, Żegańska 22 E <br />
+                        REGON 001375127, BDO 000114189
+                        <br />
+                        NIP 5210083087
+                    </div>
+                    <h1 className='text-lg font-bold uppercase tracking-wider text-center'>
                         Protokół wykonania leku recepturowego
                     </h1>
                 </div>
@@ -91,7 +92,7 @@ NIP 5210083087
                         />
                     </div>
 
-                    <div className='grid grid-cols-3 gap-3'>
+                    <div className='grid grid-cols-4 gap-3'>
                         <DisplayField
                             label='Przechowywanie'
                             value={
@@ -114,14 +115,6 @@ NIP 5210083087
                             label='Sterylność'
                             value={draft.isSterile ? 'Jałowy' : 'Niejałowy'}
                         />
-                    </div>
-
-                    <div className='grid grid-cols-3 gap-3'>
-                        <DisplayField
-                            label='Data wykonania'
-                            value={extra.executionDate}
-                        />
-
                         <DisplayField
                             label='Trwałość od daty wykonania'
                             value={
@@ -145,29 +138,27 @@ NIP 5210083087
                                 ingredient.ingredientId,
                             );
 
-const amount = Number(ingredient.amount);
+                            const amount = Number(ingredient.amount);
                             return (
                                 <div key={index}>
                                     {ing?.name}{' '}
-                                  {Number.isFinite(amount)
-    ? amount.toFixed(1)
-    : ingredient.amount}  
+                                    {Number.isFinite(amount)
+                                        ? amount.toFixed(1)
+                                        : ingredient.amount}
                                     g
                                 </div>
                             );
                         })}
                     </div>
 
-{/*3 */}
+                    {/*3 */}
                 </ProtocolSection>
-<ProtocolSection title='3. Etapy realizacji'>
+                <ProtocolSection title='3. Etapy realizacji'>
                     <div
                         contentEditable
                         suppressContentEditableWarning
                         className='border rounded-lg p-2 bg-gray-50 '
-                    >
-                       
-                    </div>
+                    ></div>
                 </ProtocolSection>
 
                 {/*4 */}
@@ -185,8 +176,7 @@ const amount = Number(ingredient.amount);
                 </ProtocolSection>
 
                 {/* 5 */}
-                <ProtocolSection title='4
-5. Obliczenia składników'>
+                <ProtocolSection title='5. Obliczenia składników'>
                     <EditableTextarea
                         value={extra.calculations}
                         onChange={(value) => updateExtra('calculations', value)}
@@ -215,23 +205,26 @@ const amount = Number(ingredient.amount);
                 {/* 8 */}
 
                 <ProtocolSection title='8. Przygotowanie pomieszczenia i personelu'>
-                    <div className='space-y-3'>
+                    <div className='space-y-2'>
                         <div>
-                            <div className='font-semibold mb-1'>
-                                Pomieszczenie
-                            </div>
-                            <div className='space-y-1 text-xs'>
+                            <div className='font-semibold '>Pomieszczenie</div>
+                            <div className='text-[11px]'>
                                 {preparation.room.map((item, i) => (
-                                    <div key={i}>{i+1}. {item}</div>
+                                    <div key={i}>
+                                        {i + 1}. {item}
+                                    </div>
                                 ))}
                             </div>
                         </div>
 
                         <div>
-                            <div className='font-semibold mb-1'>Personel</div>
-                            <div className='space-y-1 text-xs'>
+                            <div className='font-semibold '>Personel</div>
+                            <div className=' text-[11px]'>
                                 {preparation.staff.map((item, i) => (
-                                    <div key={i}> {i+1}. {item}</div>
+                                    <div key={i}>
+                                        {' '}
+                                        {i + 1}. {item}
+                                    </div>
                                 ))}
                             </div>
                         </div>
