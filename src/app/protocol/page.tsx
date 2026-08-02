@@ -16,7 +16,6 @@ import { getPreparation } from '@/lib/preparations/getPreparation';
 import { getTestsByDosageForm } from '@/lib/ingredients/getTestsByDosageForm';
 import { durationOptions, storageOptions } from '@/data/protocolDetailsOptions';
 import { dosageForms } from '@/data/dosageForms';
-import { containerOptions } from '@/data/containers';
 import { DisplayField } from '@/components/protocol/DisplayField';
 
 export default function ProtocolPage() {
@@ -187,11 +186,7 @@ export default function ProtocolPage() {
                 {/* 6  */}
                 <ProtocolSection title='6. Opakowanie leku'>
                     <EditableTextarea
-                        value={`${draft.isSterile ? 'Sterylna' : ''} ${
-                            containerOptions.find(
-                                (opt) => opt.value === extra.packaging,
-                            )?.label || ''
-                        }`}
+                        value={extra.packaging}
                         onChange={(value) => updateExtra('packaging', value)}
                         rows={1}
                     />

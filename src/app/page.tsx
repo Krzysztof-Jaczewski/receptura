@@ -19,6 +19,7 @@ import IngredientsSection from '@/components/protocol-form/IngredientsSection';
 import { FileText } from 'lucide-react';
 import { protocolDefaultValues } from '@/data/protocolDefaults';
 import RecipeTemplateSection from '@/components/protocol-form/RecipeTemplateSection';
+import { containerOptions } from '@/data/containers';
 
 export default function Home() {
     const router = useRouter();
@@ -40,6 +41,21 @@ export default function Home() {
         setFormData({
             ...data,
             ingredients: calculatedIngredients,
+            extra: {
+                calculations: data.extra?.calculations ?? '',
+                packaging: `${data.isSterile ? 'Sterylna' : ''} ${
+                    containerOptions.find(
+                        (opt) => opt.value === data.extra?.packaging,
+                    )?.label ?? ''
+                }`,
+                tests: data.extra?.tests ?? '',
+                execution: data.extra?.execution ?? '',
+                usage: data.extra?.usage ?? '',
+                comment: data.extra?.comment ?? '',
+                dosage: data.extra?.dosage ?? '',
+                shelfLife: data.extra?.shelfLife ?? '',
+                storage: data.extra?.storage ?? '',
+            },
         });
 
         router.push('/protocol');
