@@ -15,14 +15,13 @@ const calculations = [
 
 const execution = [
     '1. Do wytarowanej tuby odważam odpowiednią ilość Hascobazy.',
-    '2. Dodaję odpowiednią ilość wody destylowanej.',
-    '3. Na wytarowanej podkładce pergaminowej odważam odpowiednią ilość hydrokortyzonu.',
-    '5. Dodaję odważony hydrokortyzon.',
+    '2. Do wytarowanej zlewki odważam odpowiednią ilość wody destylowanej i wlewam do tuby.',
+    '3. Na wytarowanej podkładce pergaminowej odważam odpowiednią ilość hydrokortyzonu i dodaje do tuby.',
     '4. Do tuby dodaję odpowiednią ilość witaminy E.',
-    '6. Mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
-    '7. do tuby dodaję odpowiednią ilość witaminy A. i mieszam przez 1 minutę na małych obrotach ',
-    '8. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
-    '9. Sprzątam stanowisko pracy.',
+    '5. Mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
+    '6. do tuby dodaję odpowiednią ilość witaminy A. i mieszam przez 1 minutę na małych obrotach ',
+    '7. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
+    '8. Sprzątam stanowisko pracy.',
 ];
 
 export const hydrocortisoneVitaminRecipe: {
@@ -31,7 +30,7 @@ export const hydrocortisoneVitaminRecipe: {
     formData: Partial<ProtocolFormValues>;
 } = {
     id: 'hydrocortisoni_vitamins',
-    name: 'Hydrocortisoni + Vit. A + Vit. E',
+    name: 'Hydrocortisoni + Vit. A + Vit. E + aquae purificatae + Hascobaza',
 
     formData: {
         dosageForm: 'ointment',
@@ -42,7 +41,6 @@ export const hydrocortisoneVitaminRecipe: {
             {
                 ingredientId: 'hydrocortisoni',
                 amount: '1',
-                producer: 'Fagron',
                 batch: '',
                 expiryDate: '',
             },
@@ -50,29 +48,25 @@ export const hydrocortisoneVitaminRecipe: {
                 ingredientId: 'vit_a_liq',
                 amount: '150000',
                 calculatedAmount: 3.8,
-                producer: 'Hasco',
                 batch: '',
                 expiryDate: '',
             },
             {
-                ingredientId: 'vit_e_liq',
+                ingredientId: 'vit_e',
                 amount: '0.6',
                 calculatedAmount: 1.86,
-                producer: 'Medana',
                 batch: '',
                 expiryDate: '',
             },
             {
                 ingredientId: 'aquae_purificatae',
                 amount: '20',
-                producer: 'Actifarm',
                 batch: '',
                 expiryDate: '',
             },
             {
                 ingredientId: 'hascobaza',
                 amount: 'ad 100',
-                producer: 'Hasco',
                 batch: '',
                 expiryDate: '',
             },

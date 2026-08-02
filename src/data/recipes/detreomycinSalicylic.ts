@@ -20,7 +20,7 @@ export const detreomycinSalicylicRecipe: {
     formData: Partial<ProtocolFormValues>;
 } = {
     id: 'detreomycin_salicylic_solution',
-    name: 'Detreomycyna + kwas salicylowy',
+    name: 'Detreomycyna + kwas salicylowy + gliceryna + spirytus 70% ',
 
     formData: {
         dosageForm: 'solution',
@@ -31,28 +31,24 @@ export const detreomycinSalicylicRecipe: {
             {
                 ingredientId: 'detreomycini',
                 amount: '4',
-                producer: 'Fagron',
                 batch: '',
                 expiryDate: '',
             },
             {
                 ingredientId: 'acidi_salicylici',
                 amount: '2',
-                producer: 'Fagron',
                 batch: '',
                 expiryDate: '',
             },
             {
                 ingredientId: 'glycerini',
                 amount: '5',
-                producer: 'Fagron',
                 batch: '',
                 expiryDate: '',
             },
             {
                 ingredientId: 'ethanoli_70',
                 amount: 'ad 100',
-                producer: 'Amara',
                 batch: '',
                 expiryDate: '',
             },

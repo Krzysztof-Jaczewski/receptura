@@ -2,31 +2,33 @@ import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 import { dosageFormTests } from '@/data/dosageForms';
 
 const calculations = [
-    'Obliczanie ilości składników:',
-    '100g / 4 = 25g',
+    'Obliczanie ilości Eucerini:',
+    '100g  - 5g - 5g - 30g = 60g',
     '',
     'Obliczanie ilości składników w 10g 3% Sol. Ac. borici:',
-    'Acidi borici: 25g × 3% = 0.75g',
-    'Aquae purificatae: 25g - 0.75g = 24.25g',
+    'Acidi borici: 30g × 3% = 0.9g',
+    'Aquae purificatae: 30g - 0.9g = 29.1g',
 ];
 
 const execution = [
-    '1. Do wytarowanej tuby odważam odpowiednią ilość lanoliny, wazeliny białej oraz parafiny ciekłej.',
+    '1. Do wytarowanej tuby odważam odpowiednią ilość euceryny.',
     '2. Na wytarowanej podkładce pergaminowej odważam odpowiednią ilość kwasu borowego.',
     '3. Do wytarowanej zlewki odważam odpowiednią ilość wody destylowanej.',
     '4. Wodę destylowaną podgrzewam na łaźni wodnej i rozpuszczam w niej kwas borowy.',
-    '5. Do tuby dodaję roztwór kwasu borowego i Mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo co 5 sekund zwiększając obroty  ',
-    '6. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę i naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce .',
-    '7. Sprzątam stanowisko pracy.',
+    '5. Do tuby odważam odpowiednią ilość witaminy E.',
+    '6. Mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo co 5 sekund zwiększając obroty.',
+    '7. Do tuby dodaję odpowiednią ilość witaminy A i mieszam przez 1 minutę na małych obrotach.',
+    '8. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
+    '9. Sprzątam stanowisko pracy.',
 ];
 
-export const boricOintmentRecipe: {
+export const vitAEBoricRecipe: {
     id: string;
     name: string;
     formData: Partial<ProtocolFormValues>;
 } = {
-    id: 'boric_ointment_base',
-    name: '3% Sol. Ac. borici + Vaselini + Parafini + Lanolini',
+    id: 'vit_a_e_boric',
+    name: 'Vit. A + Vit. E + 3% Sol. Ac. borici + Eucerini',
 
     formData: {
         dosageForm: 'ointment',
@@ -35,30 +37,26 @@ export const boricOintmentRecipe: {
 
         ingredients: [
             {
+                ingredientId: 'vit_a_liq',
+                amount: '5',
+                batch: '',
+                expiryDate: '',
+            },
+            {
+                ingredientId: 'vit_e_liq',
+                amount: '5',
+                batch: '',
+                expiryDate: '',
+            },
+            {
                 ingredientId: 'sol_ac_borici_3',
-                amount: '',
-                calculatedAmount: 25,
+                amount: '30',
                 batch: '',
                 expiryDate: '',
             },
             {
-                ingredientId: 'vaselini_albi',
-                amount: '',
-                calculatedAmount: 25,
-                batch: '',
-                expiryDate: '',
-            },
-            {
-                ingredientId: 'parafini_liquidi',
-                amount: '',
-                calculatedAmount: 25,
-                batch: '',
-                expiryDate: '',
-            },
-            {
-                ingredientId: 'lanolini',
-                amount: 'aa ad 100',
-                calculatedAmount: 25,
+                ingredientId: 'eucerini',
+                amount: 'ad 100',
                 batch: '',
                 expiryDate: '',
             },
@@ -70,8 +68,8 @@ export const boricOintmentRecipe: {
             storage: 'fridge',
             calculations: calculations.join('\n'),
             execution: execution.join('\n'),
-            usage: 'Preparat do stosowania zewnętrznego o działaniu ochronnym.',
-            dosage: '1x dziennie',
+            usage: 'Preparat o działaniu regenerującym, odżywczym, łagodzącym i ochronnym.',
+            dosage: '1x dziennie rano',
             comment: '',
             tests: String(dosageFormTests['ointment']),
         },

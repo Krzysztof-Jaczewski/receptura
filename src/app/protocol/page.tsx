@@ -180,7 +180,7 @@ export default function ProtocolPage() {
                     <EditableTextarea
                         value={extra.calculations}
                         onChange={(value) => updateExtra('calculations', value)}
-                        rows={4}
+                        rows={7}
                     />
                 </ProtocolSection>
 

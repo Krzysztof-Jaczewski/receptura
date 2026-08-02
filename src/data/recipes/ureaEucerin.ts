@@ -9,7 +9,7 @@ const execution = [
     '3. Do wytarowanej zlewki odważam wodę destylowaną.',
     '4. Wodę destylowaną podgrzewam na łaźni wodnej w celu ułatwienia rozpuszczenia mocznika.',
     '5. Dodaję mocznik do podgrzanej wody i mieszam do całkowitego rozpuszczenia.',
-    '6. Dodaję przygotowany roztwór do euceryny i mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
+    '6. Dodaję przygotowany roztwór do euceryny i mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo co 5 sekund zwiększając obroty ',
     '7. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
     '8. Sprzątam stanowisko pracy.',
 ];
@@ -31,21 +31,18 @@ export const ureaEucerinRecipe: {
             {
                 ingredientId: 'urea',
                 amount: '10',
-                producer: 'Fagron',
                 batch: '',
                 expiryDate: '',
             },
             {
                 ingredientId: 'aquae_purificatae',
                 amount: '10',
-                producer: 'Actifarm',
                 batch: '',
                 expiryDate: '',
             },
             {
                 ingredientId: 'eucerini',
                 amount: 'ad 100',
-                producer: 'Fagron',
                 batch: '',
                 expiryDate: '',
             },

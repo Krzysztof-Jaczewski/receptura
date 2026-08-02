@@ -4,6 +4,7 @@ import { dosageFormTests } from '@/data/dosageForms';
 const calculations = [
     'Obliczanie ilości olejku miętowego:',
     '5 * 0,019g = 0,095g',
+    '',
     'Obliczanie ilości podłoża:',
     '200g - 0,095g - 20g - 20g = 159,905g',
 ];
@@ -22,7 +23,7 @@ export const vitaminRinseRecipe: {
     formData: Partial<ProtocolFormValues>;
 } = {
     id: 'vitamin_rinse',
-    name: 'Płukanka witaminowa',
+    name: 'Vit. A + Vit. E + Oleum menthae piperitae + Glycerini',
 
     formData: {
         dosageForm: 'emulsion',
@@ -33,14 +34,12 @@ export const vitaminRinseRecipe: {
             {
                 ingredientId: 'vit_a_liq',
                 amount: '20',
-                producer: 'Hasco',
                 batch: '',
                 expiryDate: '',
             },
             {
                 ingredientId: 'vit_e_liq',
                 amount: '20',
-                producer: 'Medana',
                 batch: '',
                 expiryDate: '',
             },
@@ -48,14 +47,12 @@ export const vitaminRinseRecipe: {
                 ingredientId: 'oleum_menthae_piperitae',
                 amount: '5',
                 calculatedAmount: 0.095,
-                producer: 'Fagron',
                 batch: '',
                 expiryDate: '',
             },
             {
                 ingredientId: 'glycerini',
                 amount: 'ad 200',
-                producer: 'Fagron',
                 batch: '',
                 expiryDate: '',
             },

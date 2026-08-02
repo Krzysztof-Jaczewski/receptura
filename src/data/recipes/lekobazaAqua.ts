@@ -1,26 +1,23 @@
 import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 import { dosageFormTests } from '@/data/dosageForms';
 
-const calculations = [
-    'Obliczanie ilości Ung. cholesteroli:',
-    '200g - 40g = 160g',
-];
+const calculations = ['Obliczanie ilości Lekobazy:', '200g - 5g = 195g'];
 
 const execution = [
-    '1. Do wytarowanej tuby odważam odpowiednią ilość Ung. cholesteroli.',
-    '2. Dodaję odpowiednią ilość wody destylowanej.',
-    '3. Mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo zwiększając je co 5 sekund do uzyskania jednorodnej maści.',
-    '4. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce.',
-    '5. Sprzątam stanowisko pracy.',
+    '1. Do wytarowanej tuby odważam odpowiednią ilość Lekobazy.',
+    '2. Do wytarowanej zlewki odważam odpowiednią ilość wody destylowanej i dolewam do tuby.',
+    '3. Mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo co 5 sekund zwiększając obroty.',
+    '5. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę oraz naklejkę przechowywać w lodówce.',
+    '6. Sprzątam stanowisko pracy.',
 ];
 
-export const ungCholesteroliRecipe: {
+export const lekobazaAquaRecipe: {
     id: string;
     name: string;
     formData: Partial<ProtocolFormValues>;
 } = {
-    id: 'ung_cholesteroli_aqua',
-    name: 'Aqua destillata + Ung. cholesteroli',
+    id: 'lekobaza_aqua',
+    name: 'Aqua purificata + Lekobaza',
 
     formData: {
         dosageForm: 'ointment',
@@ -30,12 +27,12 @@ export const ungCholesteroliRecipe: {
         ingredients: [
             {
                 ingredientId: 'aquae_purificatae',
-                amount: '40',
+                amount: '5',
                 batch: '',
                 expiryDate: '',
             },
             {
-                ingredientId: 'ung_cholesteroli',
+                ingredientId: 'lekobaza',
                 amount: 'ad 200',
                 batch: '',
                 expiryDate: '',

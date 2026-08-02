@@ -4,7 +4,7 @@ const ingredientSchema = z.object({
     ingredientId: z.string(),
     amount: z.string(),
     calculatedAmount: z.number().optional(),
-    producer: z.string(),
+    producer: z.string().optional(),
     batch: z.string(),
     expiryDate: z.string(),
 });

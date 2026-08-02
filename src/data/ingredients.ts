@@ -35,19 +35,25 @@ export const ingredientOptions: IngredientOption[] = [
         id: 'devikap',
         name: 'Devikap sol.',
         category: 'active',
-        producer: 'Fagron',
+        producer: 'Polfarma',
     },
 
     {
         id: 'ethanoli_70',
         name: 'Ethanoli 70%',
         category: 'vehicle',
-        producer: 'Fagron',
+        producer: 'Amara',
     },
     {
         id: 'ethanoli_96',
         name: 'Ethanoli 96%',
         category: 'vehicle',
+        producer: 'Amara',
+    },
+    {
+        id: 'encortoloni',
+        name: 'Prednisoloni',
+        category: 'base',
         producer: 'Fagron',
     },
     {
@@ -87,7 +93,7 @@ export const ingredientOptions: IngredientOption[] = [
         producer: 'Fagron',
     },
     {
-        id: 'lekobase',
+        id: 'lekobaza',
         name: 'Lekobaza',
         category: 'base',
         producer: 'Fagron',
@@ -150,7 +156,7 @@ export const ingredientOptions: IngredientOption[] = [
         id: 'ung_cholesteroli',
         name: 'Ung. cholesteroli',
         category: 'base',
-        producer: 'Fagron',
+        producer: 'Galfarm',
     },
     {
         id: 'ung_nitrocardi',

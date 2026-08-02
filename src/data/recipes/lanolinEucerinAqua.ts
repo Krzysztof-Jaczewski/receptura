@@ -3,7 +3,7 @@ import { dosageFormTests } from '@/data/dosageForms';
 
 const calculations = [
     'Obliczanie ilości 1% roztworu kwasu borowego:',
-    '200g - 80g - 60g  = 60g',
+    '200g - 80g - 60g - 20g = 40g',
 ];
 
 const execution = [
@@ -16,13 +16,13 @@ const execution = [
     '7. Sprzątam stanowisko pracy .',
 ];
 
-export const lanolinEucerinRecipe: {
+export const lanolinEucerinAquaRecipe: {
     id: string;
     name: string;
     formData: Partial<ProtocolFormValues>;
 } = {
-    id: 'lanolin_eucerin_boric',
-    name: 'Lanolina + Euceryna  + Sol. Ac. borici 1%',
+    id: 'lanolin_eucerin_aqua_boric',
+    name: 'Lanolina + Euceryna + Aqua + Sol. Ac. borici 1%',
 
     formData: {
         dosageForm: 'ointment',
@@ -43,6 +43,12 @@ export const lanolinEucerinRecipe: {
                 expiryDate: '',
             },
             {
+                ingredientId: 'aquae_purificatae',
+                amount: '20',
+                batch: '',
+                expiryDate: '',
+            },
+            {
                 ingredientId: 'sol_ac_borici_1',
                 amount: 'ad 200',
                 batch: '',
@@ -57,7 +63,7 @@ export const lanolinEucerinRecipe: {
             calculations: calculations.join('\n'),
             execution: execution.join('\n'),
             usage: 'Preparat o działaniu ochronnym i nawilżającym.',
-            dosage: '2x dziennie .',
+            dosage: '1x dziennie .',
             comment: '',
             tests: String(dosageFormTests['ointment']),
         },
