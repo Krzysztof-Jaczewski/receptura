@@ -36,7 +36,7 @@ export default function Home() {
             data.totalAmount,
             data.ingredients,
         ) as ProtocolFormValues['ingredients'];
-        console.log(calculatedIngredients);
+
         setFormData({
             ...data,
             ingredients: calculatedIngredients,
@@ -44,8 +44,6 @@ export default function Home() {
 
         router.push('/protocol');
     };
-
-    console.log('watch', control._formValues);
 
     return (
         <div className='bg-gray-100 min-h-screen py-10'>

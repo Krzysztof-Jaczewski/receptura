@@ -11,6 +11,7 @@ export const resolveIngredient = (id: string, amount: number) => {
             {
                 name: ingredient.name,
                 amount,
+                producer: ingredient.producer ?? '',
             },
         ];
     }
@@ -19,10 +20,10 @@ export const resolveIngredient = (id: string, amount: number) => {
     return (
         ingredient.compound?.map((part) => {
             const sub = getIngredientById(part.ingredientId);
-
             return {
                 name: sub?.name ?? part.ingredientId,
                 amount: (amount * part.percentage) / 100,
+                producer: sub?.producer ?? '',
             };
         }) ?? []
     );
