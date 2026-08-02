@@ -54,7 +54,6 @@ export const ungCholesteroliRecipe: {
             dosage: '1x dziennie',
             comment: '',
             tests: String(dosageFormTests['ointment']),
-            executionDate: new Date().toISOString().split('T')[0],
         },
     },
 };

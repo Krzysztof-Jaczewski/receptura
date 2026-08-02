@@ -71,7 +71,6 @@ export const vitaminRinseRecipe: {
             dosage: '3 razy dziennie po łyżce na pól szklanki wody, do płukania gardła',
             comment: '',
             tests: String(dosageFormTests['emulsion']),
-            executionDate: new Date().toISOString().split('T')[0],
         },
     },
 };

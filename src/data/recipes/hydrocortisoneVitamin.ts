@@ -88,7 +88,6 @@ export const hydrocortisoneVitaminRecipe: {
             dosage: 'Stosować 2 razy dziennie rano i wieczorem.',
             comment: '',
             tests: String(dosageFormTests['ointment']),
-            executionDate: new Date().toISOString().split('T')[0],
         },
     },
 };

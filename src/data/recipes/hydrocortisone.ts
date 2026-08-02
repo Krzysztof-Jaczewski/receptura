@@ -52,7 +52,6 @@ export const hydrocortisoneRecipe: {
             execution: execution.join('\n'),
             comment: '',
             tests: String(dosageFormTests['ointment']),
-            executionDate: new Date().toISOString().split('T')[0],
         },
     },
 };

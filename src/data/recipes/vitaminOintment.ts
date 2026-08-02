@@ -91,7 +91,6 @@ export const vitaminOintmentRecipe: {
             dosage: '2x dziennie.',
             comment: '',
             tests: String(dosageFormTests['ointment']),
-            executionDate: new Date().toISOString().split('T')[0],
         },
     },
 };

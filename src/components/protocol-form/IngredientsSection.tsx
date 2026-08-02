@@ -123,7 +123,6 @@ const IngredientsSection = ({ control, register, watch, setValue }: Props) => {
                     />
 
                     <input
-                        type='date'
                         {...register(`ingredients.${index}.expiryDate`)}
                         className={input}
                     />

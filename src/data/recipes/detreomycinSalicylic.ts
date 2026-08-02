@@ -68,7 +68,6 @@ export const detreomycinSalicylicRecipe: {
             dosage: '1 x dziennie rano.',
             comment: '',
             tests: String(dosageFormTests['solution']),
-            executionDate: new Date().toISOString().split('T')[0],
         },
     },
 };

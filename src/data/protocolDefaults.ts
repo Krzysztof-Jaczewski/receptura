@@ -10,7 +10,6 @@ export const defaultExtra = {
     dosage: '',
     shelfLife: '14d',
     storage: 'fridge',
-    executionDate: new Date().toISOString().split('T')[0],
 };
 
 export const protocolDefaultValues: ProtocolFormValues = {
