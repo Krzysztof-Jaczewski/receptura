@@ -27,17 +27,17 @@ export const preparationSteps: Record<
         room: [
             'Przygotowano i zdezynfekowano komorę laminarną zgodnie z procedurą aseptyczną.',
             'Wykonano dezynfekcję obszaru roboczego od strefy najwyższej czystości do zewnętrznej.',
-'Sprawdzono termin ważności oraz oznakowanie surowców farmaceutycznych.',
+            'Sprawdzono termin ważności oraz oznakowanie surowców farmaceutycznych.',
             'Uruchomiono komorę laminarną i przeprowadzono jej wyjaławianie przez 30 min.',
             'Przygotowano wyłącznie jałowy lub wyjałowiony sprzęt oraz opakowania.',
             'Zapewniono utrzymanie warunków aseptycznych oraz ograniczenie dostępu do strefy pracy.',
         ],
         staff: [
             'Wykonano higieniczne mycie rąk zgodnie z techniką higienicznego mycia rąk.',
-'Wykonano dezynfekcję rąk preparatem do chirurgicznej dezynfekcji skóry(np. Manusan)',
+            'Wykonano dezynfekcję rąk preparatem do chirurgicznej dezynfekcji skóry(np. Manusan)',
             'Zalożono zestaw odzieży wymagany do pracy w warunkach aseptycznych(fatuch, czepek,maska ochnonna, ochraniacze na buty)',
             'Wykonano ponowną dezynfekcję rąk preparatem do chirurgicznej dezynfekcji skóry(np. Manusan)',
-'Założono jałowe rękawice i przystapiono do pracy w warunkach aseptycznych',
+            'Założono jałowe rękawice i przystapiono do pracy w warunkach aseptycznych',
         ],
     },
 };

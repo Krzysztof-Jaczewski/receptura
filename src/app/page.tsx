@@ -29,10 +29,9 @@ export default function Home() {
         defaultValues: protocolDefaultValues,
     });
 
-    const { register, handleSubmit, control, setValue, reset } = form;
+    const { register, handleSubmit, control, setValue, reset, watch } = form;
 
     const onSubmit = (data: ProtocolFormValues) => {
-        console.log(data.totalAmount);
         const calculatedIngredients = calculateAdIngredient(
             data.totalAmount,
             data.ingredients,
@@ -45,6 +44,8 @@ export default function Home() {
 
         router.push('/protocol');
     };
+
+    console.log('watch', control._formValues);
 
     return (
         <div className='bg-gray-100 min-h-screen py-10'>
@@ -72,7 +73,12 @@ export default function Home() {
                     <ProtocolDetailsSection register={register} />
 
                     {/* SKŁADNIKI */}
-                    <IngredientsSection control={control} register={register} />
+                    <IngredientsSection
+                        control={control}
+                        register={register}
+                        watch={watch}
+                        setValue={setValue}
+                    />
 
                     {/* SUBMIT */}
                     <button

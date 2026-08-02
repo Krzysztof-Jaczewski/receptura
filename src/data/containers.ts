@@ -1,22 +1,22 @@
 export const containerOptions = [
     // TUBA
     {
-        label: 'Pojemnik-tuba 20 g',
+        label: 'Tuba 20 g',
         value: 'tube_20',
         type: 'tube',
     },
     {
-        label: 'Pojemnik-tuba 50 g',
+        label: 'Tuba 50 g',
         value: 'tube_50',
         type: 'tube',
     },
     {
-        label: 'Pojemnik-tuba 100 g',
+        label: 'Tuba 100 g',
         value: 'tube_100',
         type: 'tube',
     },
     {
-        label: 'Pojemnik-tuba 200 g',
+        label: 'Tuba 200 g',
         value: 'tube_200',
         type: 'tube',
     },

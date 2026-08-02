@@ -2,6 +2,13 @@ import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 import { dosageFormTests } from '@/data/dosageForms';
 
 const calculations = [
+    'Obliczanie ilości Vit.A liq:',
+    '3.333ml x 1.14g/ml = 3.8g',
+
+    'Obliczanie ilości Vit.E liq:',
+    '0.6ml : 0.3g/ml = 2ml',
+    '2ml x 0.93g/ml = 1.86g',
+
     'Obliczanie ilości Hascobazy:',
     '100g - 1g - 3,8g - 1,86g - 20g = 73,34g',
 ];

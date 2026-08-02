@@ -4,7 +4,7 @@ export interface IngredientOption {
     id: string;
     name: string;
     category: 'active' | 'base' | 'vehicle' | 'compound';
-
+    producer?: string;
     compound?: {
         ingredientId: string;
         percentage: number;

@@ -1,6 +1,12 @@
 'use client';
 
-import { Control, UseFormRegister, useFieldArray } from 'react-hook-form';
+import {
+    Control,
+    UseFormRegister,
+    UseFormSetValue,
+    UseFormWatch,
+    useFieldArray,
+} from 'react-hook-form';
 import { Plus, FlaskConical, Trash2 } from 'lucide-react';
 
 import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
@@ -9,6 +15,8 @@ import { ingredientOptions } from '@/data/ingredients';
 type Props = {
     control: Control<ProtocolFormValues>;
     register: UseFormRegister<ProtocolFormValues>;
+    watch: UseFormWatch<ProtocolFormValues>;
+    setValue: UseFormSetValue<ProtocolFormValues>;
 };
 
 const section =
@@ -17,7 +25,7 @@ const section =
 const input =
     'border rounded-lg px-3 py-2 text-sm w-full focus:ring-2 focus:ring-blue-500 focus:outline-none';
 
-const IngredientsSection = ({ control, register }: Props) => {
+const IngredientsSection = ({ control, register, watch, setValue }: Props) => {
     const { fields, append, remove } = useFieldArray({
         control,
         name: 'ingredients',
@@ -68,7 +76,24 @@ const IngredientsSection = ({ control, register }: Props) => {
                     <select
                         {...register(`ingredients.${index}.ingredientId`)}
                         className={input}
-                        defaultValue=''
+                        value={watch(`ingredients.${index}.ingredientId`)}
+                        onChange={(e) => {
+                            const ingredientId = e.target.value;
+
+                            setValue(
+                                `ingredients.${index}.ingredientId`,
+                                ingredientId,
+                            );
+
+                            const ingredient = ingredientOptions.find(
+                                (i) => i.id === ingredientId,
+                            );
+
+                            setValue(
+                                `ingredients.${index}.producer`,
+                                ingredient?.producer ?? '',
+                            );
+                        }}
                     >
                         <option value='' disabled>
                             Wybierz składnik
