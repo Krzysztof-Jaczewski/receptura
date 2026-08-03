@@ -20,6 +20,15 @@ const label = 'text-xs font-medium text-gray-600';
 const PatientDoctorSection = ({ register }: Props) => {
     return (
         <div className='grid grid-cols-3 gap-4'>
+ <div className={section}>
+                <div className='flex items-center gap-2 font-semibold'>
+                    <User className='text-green-600 w-5 h-5' />
+                    Dane recepty
+                </div>
+
+                <p className={label}>Nr recepty/Nr kontrolny</p>
+                <input {...register('prescriptionNumber')} className={input} />
+            </div>
             {/* PACJENT */}
             <div className={section}>
                 <div className='flex items-center gap-2 font-semibold'>
@@ -41,15 +50,7 @@ const PatientDoctorSection = ({ register }: Props) => {
                 <p className={label}>Imię i nazwisko lekarza</p>
                 <input {...register('doctorName')} className={input} />
             </div>
-            <div className={section}>
-                <div className='flex items-center gap-2 font-semibold'>
-                    <User className='text-green-600 w-5 h-5' />
-                    Dane recepty
-                </div>
-
-                <p className={label}>Nr recepty/Nr kontrolny</p>
-                <input {...register('prescriptionNumber')} className={input} />
-            </div>
+           
         </div>
     );
 };
