@@ -122,11 +122,17 @@ export const ingredientOptions: IngredientOption[] = [
         category: 'active',
         producer: 'Fagron',
     },
+{
+        id: 'metronidazoli',
+        name: 'Metronidazoli',
+        category: 'active',
+        producer: 'Amara',
+    },
     {
         id: 'neomycini_sulfatis',
         name: 'Neomycini sulfatis',
         category: 'active',
-        producer: 'Amamra',
+        producer: 'Fagron',
     },
     {
         id: 'nystatini',
@@ -162,7 +168,7 @@ export const ingredientOptions: IngredientOption[] = [
         id: 'ung_cholesteroli',
         name: 'Ung. cholesteroli',
         category: 'base',
-        producer: 'Galfarm',
+        producer: 'Fagron',
     },
     {
         id: 'ung_nitrocardi',
