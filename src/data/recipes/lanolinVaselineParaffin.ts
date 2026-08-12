@@ -32,7 +32,7 @@ export const lanolinVaselineParaffinRecipe: {
                 expiryDate: '',
             },
             {
-                ingredientId: 'vaselini_albi',
+                ingredientId: 'vaselini_flavi',
                 amount: '',
                 calculatedAmount: 33.333,
                 batch: '',
