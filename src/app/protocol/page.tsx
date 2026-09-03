@@ -141,10 +141,14 @@ export default function ProtocolPage() {
                             return (
                                 <div key={index}>
                                     {ing?.name}{' '}
-                                    {Number.isFinite(amount)
-                                        ? amount.toFixed(1)
-                                        : ingredient.amount}
-                                    g
+                                    {amount !== 0
+                                        ? `${
+                                              Number.isFinite(amount)
+                                                  ? amount.toFixed(1)
+                                                  : ingredient.amount
+                                          }
+                                    g`
+                                        : ''}
                                 </div>
                             );
                         })}
