@@ -56,6 +56,12 @@ export const ingredientOptions: IngredientOption[] = [
         category: 'base',
         producer: 'Fagron',
     },
+{
+        id: 'erythromycini',
+        name: 'Erythromycini',
+        category: 'base',
+        producer: 'Amara',
+    },
     {
         id: 'eucerini',
         name: 'Eucerini',
@@ -116,6 +122,12 @@ export const ingredientOptions: IngredientOption[] = [
         category: 'active',
         producer: 'Fagron',
     },
+{
+        id: 'metronidazoli',
+        name: 'Metronidazoli',
+        category: 'active',
+        producer: 'Amara',
+    },
     {
         id: 'neomycini_sulfatis',
         name: 'Neomycini sulfatis',
@@ -156,7 +168,7 @@ export const ingredientOptions: IngredientOption[] = [
         id: 'ung_cholesteroli',
         name: 'Ung. cholesteroli',
         category: 'base',
-        producer: 'Galfarm',
+        producer: 'Fagron',
     },
     {
         id: 'ung_nitrocardi',
@@ -180,13 +192,13 @@ export const ingredientOptions: IngredientOption[] = [
         id: 'vit_a',
         name: 'Vit. A',
         category: 'active',
-        producer: 'Hasco',
+        producer: 'Fagron',
     },
     {
         id: 'vit_e',
         name: 'Vit. E',
         category: 'active',
-        producer: 'Medana',
+        producer: 'Fagron',
     },
     {
         id: 'vit_a_liq',
@@ -198,7 +210,7 @@ export const ingredientOptions: IngredientOption[] = [
         id: 'vit_e_liq',
         name: 'Vit. E liq.',
         category: 'active',
-        producer: 'Medana',
+        producer: 'Polfarma',
     },
     {
         id: 'zinci_oxydi',

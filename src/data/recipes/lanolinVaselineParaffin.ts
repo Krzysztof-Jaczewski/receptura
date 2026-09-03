@@ -32,7 +32,7 @@ export const lanolinVaselineParaffinRecipe: {
                 expiryDate: '',
             },
             {
-                ingredientId: 'vaselini_albi',
+                ingredientId: 'vaselini_flavi',
                 amount: '',
                 calculatedAmount: 33.333,
                 batch: '',
@@ -53,7 +53,7 @@ export const lanolinVaselineParaffinRecipe: {
             storage: 'roomTemperature',
             calculations: calculations.join('\n'),
             execution: execution.join('\n'),
-            usage: 'Podłoże maściowe do stosowania zewnętrznego.',
+            usage: 'Preparat o działaniu natłudzczającym, ochronnym i zmiękczajacym.',
             dosage: '1x dziennie .',
             comment: '',
             tests: String(dosageFormTests['ointment']),
