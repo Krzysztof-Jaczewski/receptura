@@ -1,9 +1,12 @@
 import { dosageFormTests } from '@/data/dosageForms';
 import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
 
-const calculations = ['Obliczanie ilości podłoża:', '100g - 1g = 99g'];
+const calculations = [
+    'Obliczanie ilości Maści cholesterolowej:',
+    '100g - 1g = 99g',
+];
 const execution = [
-    '1. Do wytarowanego pojemnika odważam odpowiednią ilość podłoża',
+    '1. Do wytarowanego pojemnika odważam odpowiednią ilość Maści cholesterolowej',
     '2. Na wytarowanej podkładce pergaminowej odważam odpowiadającą ilość składnika',
     '3. Wsypuje składnik do pojemnika z podłożem i mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo co 5 sekund zwiększając obroty ',
     '4. Po zakończeniu mieszania wyjmuje mieszadło, zakładam pokrywę i naklejam uzupełnioną etykietę',

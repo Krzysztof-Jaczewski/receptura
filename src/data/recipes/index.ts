@@ -3,6 +3,7 @@ import { boricOintmentRecipe } from '@/data/recipes/boricOintment';
 import { detreomycinSalicylicRecipe } from '@/data/recipes/detreomycinSalicylic';
 import { encortoloniVitAEBoricRecipe } from '@/data/recipes/encortoloniVitAEBoric';
 import { hydrocortisoneRecipe } from '@/data/recipes/hydrocortisone';
+import { hydrocortisoneAquaRecipe } from '@/data/recipes/hydrocortisoneAqua';
 import { hydrocortisoneVitaminRecipe } from '@/data/recipes/hydrocortisoneVitamin';
 import { hydrocortisoniBoricHascobazaRecipe } from '@/data/recipes/hydrocortisoniBoricHascobaza';
 import { hydrocortisoniLekobazaAquaRecipe } from '@/data/recipes/hydrocortisoniLekobazaAquaRecipe';
@@ -15,6 +16,7 @@ import { ungCholesteroliRecipe } from '@/data/recipes/ungCholesteroli';
 import { ungNitrocardiRecipe } from '@/data/recipes/ungNitrocardi';
 import { ureaEucerinRecipe } from '@/data/recipes/ureaEucerin';
 import { vitAEBoricRecipe } from '@/data/recipes/vitAEBoric';
+import { vitALinomagVitEGlyceroliMentholiRecipe } from '@/data/recipes/vitALinomagVitEGlyceroliMentholi';
 import { vitaminOintmentRecipe } from '@/data/recipes/vitaminOintment';
 import { vitaminRinseRecipe } from '@/data/recipes/vitaminRinse';
 import { vitELinomagUngCholesteroliRecipe } from '@/data/recipes/vitELinomagUngCholesteroli';
@@ -31,6 +33,7 @@ export const recipeTemplates = [
     hydrocortisoneVitaminRecipe,
     hydrocortisoniBoricHascobazaRecipe,
     hydrocortisoniLekobazaAquaRecipe,
+    hydrocortisoneAquaRecipe,
     lanolinEucerinRecipe,
     lanolinEucerinAquaRecipe,
     lanolinVaselineParaffinRecipe,
@@ -40,6 +43,7 @@ export const recipeTemplates = [
     vitaminOintmentRecipe,
     vitaminRinseRecipe,
     vitAEBoricRecipe,
+    vitALinomagVitEGlyceroliMentholiRecipe,
     vitELinomagUngCholesteroliRecipe,
     zincOxideLekobazaRecipe,
 ];

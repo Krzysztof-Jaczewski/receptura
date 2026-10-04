@@ -7,7 +7,7 @@ const execution = [
     '1. Do wytarowanej tuby odważam odpowiednią ilość Lekobazy.',
     '2. Na wytarowanej podkładce pergaminowej odważam odpowiednią ilość Hydrocortisonu i dodaje go do tuby.',
     '3. Do wytarowanej zlewki odważam odpowiednią ilość wody destylowanej i dolewam ją do tuby.',
-    '4. Mieszam przez 2 minuty zaczynając od małych obrotów co 5 sekund zwiększając obroty.',
+    '4. Mieszam przez 5 minut zaczynając od małych obrotów co 5 sekund zwiększając obroty.',
     '5. Po zakończeniu mieszania wyjmuję mieszadło, zamykam tubę, naklejam uzupełnioną etykietę oraz naklejkę przechowywać w lodówce.',
     '6. Sprzątam stanowisko pracy.',
 ];

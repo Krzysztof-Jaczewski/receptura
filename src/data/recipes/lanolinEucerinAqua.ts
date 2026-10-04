@@ -11,7 +11,7 @@ const execution = [
     '2. Na wytarowanej podkładce pergaminowej odważam odpowiednią ilość  kwasu borowego.',
     '3. Do wytarowanej zlewki odważam odpowiednią ilość wody destylowanej i dodaję kwas borowy, mieszam do całkowitego rozpuszczenia.',
     '4. Roztwór ze zlewki dodaje do tuby z podłożami ',
-    '5. Mieszam przez 2 minuty zaczynając od małych obrotów i stopniowo co 5 sekund zwiększając obroty ',
+    '5. Mieszam przez 5 minut zaczynając od małych obrotów i stopniowo co 5 sekund zwiększając obroty ',
     '6. Po zakończeniu mieszania wyjmuje mieszadło, zakładam pokrywę i naklejam uzupełnioną etykietę i naklejkę przechowywać w lodówce',
     '7. Sprzątam stanowisko pracy .',
 ];

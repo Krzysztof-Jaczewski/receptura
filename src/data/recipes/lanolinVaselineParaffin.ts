@@ -53,7 +53,7 @@ export const lanolinVaselineParaffinRecipe: {
             storage: 'roomTemperature',
             calculations: calculations.join('\n'),
             execution: execution.join('\n'),
-            usage: 'Preparat o działaniu natłudzczającym, ochronnym i zmiękczajacym.',
+            usage: 'Preparat o działaniu natłuszczającym, ochronnym i zmiękczającym.',
             dosage: '1x dziennie .',
             comment: '',
             tests: String(dosageFormTests['ointment']),
