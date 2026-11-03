@@ -30,7 +30,7 @@ export const protocolSchema = z.object({
     doctorName: z.string(),
     prescriptionNumber: z.string(),
     dosageForm: z.enum(['ointment', 'solution', 'emulsion', 'drops']),
-    totalAmount: z.number().positive(),
+    totalAmount: z.number().nonnegative(),
     isSterile: z.boolean(),
     ingredients: z.array(ingredientSchema),
     extra: z
