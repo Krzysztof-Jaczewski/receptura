@@ -17,6 +17,7 @@ import { getTestsByDosageForm } from '@/lib/ingredients/getTestsByDosageForm';
 import { durationOptions, storageOptions } from '@/data/protocolDetailsOptions';
 import { dosageForms } from '@/data/dosageForms';
 import { DisplayField } from '@/components/protocol/DisplayField';
+import { adjustExecutionTime } from '@/lib/calculations/adjustCalculationTime';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
@@ -233,7 +234,10 @@ export default function ProtocolPage() {
 
                 <ProtocolSection title='9. Opis wykonania'>
                     <EditableTextarea
-                        value={extra.execution}
+                        value={adjustExecutionTime(
+                            extra.execution,
+                            draft.totalAmount,
+                        )}
                         onChange={(value) => updateExtra('execution', value)}
                         rows={10}
                     />{' '}
