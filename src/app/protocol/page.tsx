@@ -258,7 +258,10 @@ export default function ProtocolPage() {
                     />
                 </ProtocolSection>
 
-                <SignatureStampSection />
+                <div className='flex gap-4'>
+                    <SignatureStampSection label='Podpis i pieczątka osoby kontrolującej sporządzenie leku' />
+                    <SignatureStampSection label='Podpis i pieczątka osoby sporządzającej lek' />
+                </div>
             </div>
         </div>
     );
