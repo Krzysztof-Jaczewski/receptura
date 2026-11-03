@@ -1,3 +1,4 @@
+import { acidiBoriciBenzocainiHydrocortisoniRecipe } from '@/data/recipes/acidiBoriciBenzocainiHydrocortisoni';
 import { acidiSalicyliciVaseliniFlaviRecipe } from '@/data/recipes/acidiSalicyliciVaseliniFlavi';
 import { boricOintmentRecipe } from '@/data/recipes/boricOintment';
 import { detreomycinSalicylicRecipe } from '@/data/recipes/detreomycinSalicylic';
@@ -7,6 +8,7 @@ import { hydrocortisoneAquaRecipe } from '@/data/recipes/hydrocortisoneAqua';
 import { hydrocortisoneVitaminRecipe } from '@/data/recipes/hydrocortisoneVitamin';
 import { hydrocortisoniBoricHascobazaRecipe } from '@/data/recipes/hydrocortisoniBoricHascobaza';
 import { hydrocortisoniLekobazaAquaRecipe } from '@/data/recipes/hydrocortisoniLekobazaAquaRecipe';
+import { hydrocortisoniZinciGlyceriniLekobazaRecipe } from '@/data/recipes/hydrocortisoniZinciGlyceriniLekobaza';
 import { lanolinEucerinRecipe } from '@/data/recipes/lanolinEucerin';
 import { lanolinEucerinAquaRecipe } from '@/data/recipes/lanolinEucerinAqua';
 import { lanolinVaselineParaffinRecipe } from '@/data/recipes/lanolinVaselineParaffin';
@@ -23,6 +25,7 @@ import { vitELinomagUngCholesteroliRecipe } from '@/data/recipes/vitELinomagUngC
 import { zincOxideLekobazaRecipe } from '@/data/recipes/zincOxideLekobaza';
 
 export const recipeTemplates = [
+    acidiBoriciBenzocainiHydrocortisoniRecipe,
     acidiSalicyliciVaseliniFlaviRecipe,
     lekobazaAquaRecipe,
     ungCholesteroliRecipe,
@@ -33,6 +36,7 @@ export const recipeTemplates = [
     hydrocortisoneVitaminRecipe,
     hydrocortisoniBoricHascobazaRecipe,
     hydrocortisoniLekobazaAquaRecipe,
+    hydrocortisoniZinciGlyceriniLekobazaRecipe,
     hydrocortisoneAquaRecipe,
     lanolinEucerinRecipe,
     lanolinEucerinAquaRecipe,

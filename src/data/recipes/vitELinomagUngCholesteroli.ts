@@ -55,7 +55,7 @@ export const vitELinomagUngCholesteroliRecipe: {
         extra: {
             packaging: 'tube_50',
             shelfLife: '30d',
-            storage: 'room_temperature',
+            storage: 'roomTemperature',
             calculations: calculations.join('\n'),
             execution: execution.join('\n'),
             usage: 'Preparat o działaniu natłuszczającym, regenerującym i łagodzącym.',

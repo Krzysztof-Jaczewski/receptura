@@ -45,7 +45,7 @@ export const acidiSalicyliciVaseliniFlaviRecipe: {
         extra: {
             packaging: 'tube_50',
             shelfLife: '30d',
-            storage: 'room_temperature',
+            storage: 'roomTemperature',
             calculations: calculations.join('\n'),
             execution: execution.join('\n'),
             usage: 'Preparat o działaniu złuszczającym, odkażającym i natłuszczającym.',
