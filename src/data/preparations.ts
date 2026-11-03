@@ -34,9 +34,9 @@ export const preparationSteps: Record<
         ],
         staff: [
             'Wykonano higieniczne mycie rąk zgodnie z techniką higienicznego mycia rąk.',
-            'Wykonano dezynfekcję rąk preparatem do chirurgicznej dezynfekcji skóry(np. Manusan)',
-            'Zalożono zestaw odzieży wymagany do pracy w warunkach aseptycznych(fatuch, czepek,maska ochnonna, ochraniacze na buty)',
-            'Wykonano ponowną dezynfekcję rąk preparatem do chirurgicznej dezynfekcji skóry(np. Manusan)',
+            'Wykonano dezynfekcję rąk preparatem do chirurgicznej dezynfekcji skóry (np. Manusan)',
+            'Założono zestaw odzieży wymagany do pracy w warunkach aseptycznych(fartuch, czepek, maska ochronna, ochraniacze na buty)',
+            'Wykonano ponowną dezynfekcję rąk preparatem do chirurgicznej dezynfekcji skóry (np. Manusan)',
             'Założono jałowe rękawice i przystapiono do pracy w warunkach aseptycznych',
         ],
     },

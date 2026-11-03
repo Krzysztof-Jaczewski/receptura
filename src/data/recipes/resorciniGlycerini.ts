@@ -43,7 +43,7 @@ export const resorciniGlyceriniRecipe: {
         ],
 
         extra: {
-            packaging: 'bottle_50',
+            packaging: 'bottle_100',
             shelfLife: '30d',
             storage: 'roomTemperature',
             calculations: calculations.join('\n'),

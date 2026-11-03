@@ -11,7 +11,10 @@ export const calculateAdIngredient = (
 
     const sumOthers = ingredients
         .filter((i) => i !== adIngredient)
-        .reduce((sum, i) => sum + Number(i.calculatedAmount ?? i.amount), 0);
+        .reduce((sum, i) => {
+            const val = i.calculatedAmount ?? parseFloat(i.amount);
+            return sum + (Number.isFinite(val) ? val : 0);
+        }, 0);
 
     const adAmount = totalAmount - sumOthers;
 

@@ -46,7 +46,7 @@ export const vitALinomagVitEGlyceroliMentholiRecipe: {
                 expiryDate: '',
             },
             {
-                ingredientId: 'linomagi',
+                ingredientId: 'linomag',
                 amount: '60',
                 producer: '',
                 batch: '',

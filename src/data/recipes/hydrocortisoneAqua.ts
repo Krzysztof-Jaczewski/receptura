@@ -17,7 +17,7 @@ const execution = [
 export const hydrocortisoneAquaRecipe: {
     id: string;
     name: string;
-    formData: ProtocolFormValues;
+    formData: Partial<ProtocolFormValues>;
 } = {
     id: 'hydrocortisone_aqua',
     name: 'Hydrocortisoni + Aqua + Ung. cholesteroli',

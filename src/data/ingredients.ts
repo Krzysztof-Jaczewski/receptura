@@ -56,7 +56,7 @@ export const ingredientOptions: IngredientOption[] = [
         category: 'base',
         producer: 'Fagron',
     },
-{
+    {
         id: 'erythromycini',
         name: 'Erythromycini',
         category: 'base',
@@ -122,7 +122,7 @@ export const ingredientOptions: IngredientOption[] = [
         category: 'active',
         producer: 'Fagron',
     },
-{
+    {
         id: 'metronidazoli',
         name: 'Metronidazoli',
         category: 'active',
@@ -150,6 +150,12 @@ export const ingredientOptions: IngredientOption[] = [
         id: 'parafini_liquidi',
         name: 'Parafini liquidi',
         category: 'vehicle',
+        producer: 'Fagron',
+    },
+    {
+        id: 'resorcini',
+        name: 'Resorcini',
+        category: 'active',
         producer: 'Fagron',
     },
     {

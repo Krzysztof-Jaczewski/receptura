@@ -45,7 +45,7 @@ export const ProtocolWeighingTable = ({
                             </td>
 
                             <td className='p-0.5'>
-                                {r.producer ?? ingredient.producer}
+                                {r.producer || ingredient.producer}
                             </td>
 
                             <td className='p-0.5 text-center'>

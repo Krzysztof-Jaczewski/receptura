@@ -1,15 +1,20 @@
-import { ProtocolFormValues } from '@/lib/schemas/protocolSchema';
+import {
+    packagingEnum,
+    shelfLifeEnum,
+    storageEnum,
+    ProtocolFormValues,
+} from '@/lib/schemas/protocolSchema';
 
 export const defaultExtra = {
     calculations: '',
-    packaging: 'tube_100',
+    packaging: packagingEnum.parse('bottle_100'),
     tests: '',
     execution: '',
     usage: '',
     comment: '',
     dosage: '',
-    shelfLife: '14d',
-    storage: 'fridge',
+    shelfLife: shelfLifeEnum.parse('14d'),
+    storage: storageEnum.parse('fridge'),
 };
 
 export const protocolDefaultValues: ProtocolFormValues = {

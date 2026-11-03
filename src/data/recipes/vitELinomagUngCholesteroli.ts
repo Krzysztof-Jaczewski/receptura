@@ -37,7 +37,7 @@ export const vitELinomagUngCholesteroliRecipe: {
                 expiryDate: '',
             },
             {
-                ingredientId: 'linomagi',
+                ingredientId: 'linomag',
                 amount: '2',
                 producer: '',
                 batch: '',
