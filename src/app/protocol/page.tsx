@@ -18,6 +18,7 @@ import { durationOptions, storageOptions } from '@/data/protocolDetailsOptions';
 import { dosageForms } from '@/data/dosageForms';
 import { DisplayField } from '@/components/protocol/DisplayField';
 import { adjustExecutionTime } from '@/lib/calculations/adjustCalculationTime';
+import { containerOptions } from '@/data/containers';
 
 export default function ProtocolPage() {
     const data = useProtocolStore((state) => state.formData);
@@ -190,11 +191,12 @@ export default function ProtocolPage() {
 
                 {/* 6  */}
                 <ProtocolSection title='6. Opakowanie leku'>
-                    <EditableTextarea
-                        value={extra.packaging}
-                        onChange={(value) => updateExtra('packaging', value)}
-                        rows={1}
-                    />
+                    <div className='border rounded-lg p-2 bg-gray-50 text-xs'>
+                        {draft.isSterile ? 'Sterylna ' : ''}
+                        {containerOptions.find(
+                            (opt) => opt.value === extra.packaging,
+                        )?.label ?? extra.packaging}
+                    </div>
                 </ProtocolSection>
 
                 {/* 7 */}
